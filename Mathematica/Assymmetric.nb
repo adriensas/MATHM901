@@ -1,0 +1,194 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5818,        184]
+NotebookOptionsPosition[      5532,        169]
+NotebookOutlinePosition[      5919,        186]
+CellTagsIndexPosition[      5876,        183]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"t", "-", "r"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eta", "=", 
+   RowBox[{"DiagonalMatrix", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "1"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coord", "=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "x", ",", "y", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", "=", 
+   RowBox[{
+    RowBox[{"m", "[", "u", "]"}], "*", 
+    RowBox[{
+     RowBox[{"r", "^", "3"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"r", "^", "4"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"a", "[", "u", "]"}], "*", "z"}], ")"}], "^", "2"}]}], 
+      ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "*", "x"}], "+", 
+        RowBox[{"a", "*", "y"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "^", "2"}], "+", 
+        RowBox[{"a", "^", "2"}]}], ")"}]}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "*", "y"}], "-", 
+        RowBox[{"a", "*", "x"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "^", "2"}], "+", 
+        RowBox[{"a", "^", "2"}]}], ")"}]}], ",", 
+     RowBox[{"z", "/", "r"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ki", "=", 
+   RowBox[{"Inner", "[", 
+    RowBox[{"Times", ",", " ", "eta", ",", " ", "k"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", " ", 
+   RowBox[{"eta", " ", "+", " ", 
+    RowBox[{"2", "*", "H", "*", 
+     RowBox[{"Inner", "[", 
+      RowBox[{"Times", ",", "k", ",", "k"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gi", "=", 
+   RowBox[{"eta", "-", 
+    RowBox[{"2", "*", "H", "*", 
+     RowBox[{"Inner", "[", 
+      RowBox[{"Times", ",", "ki", ",", "ki"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ChrS", " ", "=", 
+   RowBox[{"Array", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"0", "#1"}], ",", 
+        RowBox[{"0", "#2"}], ",", "0", ",", "0"}], "}"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "4"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Do", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ChrS", "=", 
+        RowBox[{
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"H", "*", 
+            RowBox[{"ki", "[", 
+             RowBox[{"[", "l", "]"}], "]"}], "*", 
+            RowBox[{"ki", "[", 
+             RowBox[{"[", "m", "]"}], "]"}]}], ",", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "n", "]"}], "]"}]}], "]"}], "+", 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"H", "*", 
+            RowBox[{"ki", "[", 
+             RowBox[{"[", "l", "]"}], "]"}], "*", 
+            RowBox[{"ki", "[", 
+             RowBox[{"[", "n", "]"}], "]"}]}], ",", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "m", "]"}], "]"}]}], "]"}], "-", 
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"eta", "[", 
+             RowBox[{"[", 
+              RowBox[{"o", ",", "l"}], "]"}], "]"}], "*", 
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"H", "*", 
+               RowBox[{"ki", "[", 
+                RowBox[{"[", "m", "]"}], "]"}], "*", 
+               RowBox[{"ki", "[", 
+                RowBox[{"[", "n", "]"}], "]"}]}], ",", 
+              RowBox[{"coord", "[", 
+               RowBox[{"[", "o", "]"}], "]"}]}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"o", ",", "1", ",", "4"}], "}"}]}], "]"}]}]}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "4"}], "}"}]}], "]"}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "1", ",", "4"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", ",", 
+   RowBox[{"{", 
+    RowBox[{"l", ",", "1", ",", "4"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ChrS", "[", 
+  RowBox[{"[", 
+   RowBox[{"0", ",", "0", ",", "0"}], "]"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.718793219547378*^9, 3.718793261258387*^9}, {
+  3.7187933029693604`*^9, 3.718793809453163*^9}, {3.71879393256059*^9, 
+  3.718793968134694*^9}, {3.7187940097820053`*^9, 3.718794041382731*^9}, {
+  3.7187941423350163`*^9, 3.71879460594221*^9}, {3.718794654694717*^9, 
+  3.7187946635038223`*^9}, {3.71879469366521*^9, 3.718794953649604*^9}, {
+  3.7187949883914623`*^9, 3.71879516385423*^9}}]
+},
+WindowSize->{808, 755},
+WindowMargins->{{141, Automatic}, {Automatic, 24}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4970, 147, 684, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
