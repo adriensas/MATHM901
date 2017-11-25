@@ -6,7 +6,10 @@ Christoffel Symbol
 Ricci Tensor
 Riemann Tensor
 Einsten tensor / equation / vacuum equation
-First Schwarszchild solution
+
+- Schwarzchild soulution
+How it was found 
+The solution
 
 - Kerr-Child
 Representation (k and r)
@@ -37,4 +40,4 @@ Finding back Vaidya Kerr-Child with general form
 Assymetric
 Assymetric and Vaidya
 
-- Appendix Mathematica result and explenations
+- Appendix Mathematica result and explanations
