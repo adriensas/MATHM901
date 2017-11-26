@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+\pagenumbering{arabic}
+\section{Generalization}
+    \subsection{Introduction}
+        While we computed all the different tensors, one can notice some kind of pattern.
+        Moreover the complexity increase substantially while we add some freedom.
+        A good idea would be to introduce a general metric from which we hope to find some interesting general form for the Christoffel Symbol, the Ricci Tensor and the Einstein tensor.
+    \subsection{The metric}
+        Let us introduce the metric :
+        \begin{equation}
+            g_{ij}=\eta_{ij}+Hk_ik_j
+        \end{equation}
+        with $k_i$ any null geodesic and $H$ any function $H:=H(t,x,y,z)$.
+        The first thing we will need to find is the inverse of this mmetric.
+        Indeed we will need it to compute the Christoffel symbols.
+        We guess from our previous calculus an inverse of the form :
+        \begin{equation}
+            g^{ij}=\eta^{ij}-Hk^ik^j
+        \end{equation}
+        We can quickly check it as follow :
+        \begin{equation*}
+            g^{ij}g_{ij}= ...
+            ...
+        \end{equation*}
+    \subsection{The Christoffel symbols}
+        As already said computing the Christoffel symbol can quickly be really painful.
+        It would be nice if we could find some general easier form for the Christoffel symbol.
+        Recalling $\eta^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})$ and replacing with our format of metric.
+\end{document}
