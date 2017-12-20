@@ -1,9 +1,12 @@
-This is TeX, Version 3.14159265 (TeX Live 2015) (preloaded format=tex 2015.11.3)  26 NOV 2017 18:49
-**/Text/Generalization.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdftex 2015.11.3)  29 NOV 2017 21:49
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Test/Generalization.tex
 
 ! Emergency stop.
-<*> /Text/Generalization.tex
-                            
+<*> ./Test/Generalization.tex
+                             
 End of file on the terminal!
 
-No pages of output.
+!  ==> Fatal error occurred, no output PDF file produced!

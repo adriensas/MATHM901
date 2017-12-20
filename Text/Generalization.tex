@@ -28,13 +28,31 @@
     \subsection{The Christoffel symbols}
         As already said computing the Christoffel symbol can quickly be really painful.
         It would be nice if we could find some general easier form for the Christoffel symbol.
-        Recalling $\eta^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})$ and replacing with our format of metric.
+        Recalling $\Gamma^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})$ and replacing with our format of metric.
         \begin{equation*}
-            \eta^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})
+            \Gamma^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})
             ...
         \end{equation*}
         So that we eventually find :
+        \begin{equation}
+            \hat{\Gamma}^i_{kl}=\mathcal{H}^i_{j,k}+\mathcal{H}^i_{k,j}-\eta^{is}\mathcal{H}_{jk,s}
+        \end{equation}
+    \subsection{The Riemann Tensor and Ricci Scalar}
+        We have the following general formula :
+        \begin{equation}
+            R_{jk}=R^p_{jpk}=\Gamma^p_{kj,p}-\Gamma^p_{pj,k}+\Gamma^p_{pl}\Gamma^l_{kj}-\Gamma^p_{kl}\Gamma^l_{pj}
+        \end{equation}
+        Replacing with our expression for the Christoffel Symbol !Justify the useless term!.
         \begin{equation*}
-            \eta^i_{kl}=\frac{1}{2}g^{im}(g_{mk,l}+g_{ml,k}-g{kl,m})
+            R_{jk}=R^p_{jpk}=\Gamma^p_{kj,p}-\Gamma^p_{pj,k}+\Gamma^p_{pl}\Gamma^l_{kj}-\Gamma^p_{kl}\Gamma^l_{pj}
+            ...
+        \end{equation*}
+        We eventually find :
+        \begin{equation*}
+            R_{jk}=\hat{\Gamma}^s_{jk,s}
+        \end{equation*}
+        So that :
+        \begin{equation*}
+            R_{jk}=\mathcal{H}^s_{sj,ks}+\mathcal{H}^s_{sk,js}-\framebox(7,7){}\mathcal{H}_{jk}
         \end{equation*}
 \end{document}

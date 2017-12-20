@@ -1,9 +1,10 @@
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.3)  29 NOV 2017 22:25
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**./Text/Generalization.tex
-(./Text/Generalization.tex
+**"/Users/Adrien/Documents/Cours/Year 4/Project/Text/Generalization.tex"
+(/Users/Adrien/Documents/Cours/Year 4/Project/Text/Generalization.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -102,12 +103,12 @@ LaTeX Font Info:    ... okay on input line 4.
 Generalization.aux) ) 
 Here is how much of TeX's memory you used:
  815 strings out of 493089
- 9212 string characters out of 6134842
+ 9343 string characters out of 6134842
  67185 words of memory out of 5000000
  4365 multiletter control sequences out of 15000+600000
  5304 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,5n,20p,217b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,20p,262b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
