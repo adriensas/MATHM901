@@ -1,0 +1,54 @@
+\documentclass{article}
+    \usepackage{amsmath}
+    
+    \begin{document}
+    \pagenumbering{arabic}
+    \section{Basis of General Relativity}
+        \subsection{Introduction}
+            Our overall goal is to find different of the Einstein vacum field equation, we can write this equation as follow :
+            \begin{equation*}
+                G_{ij} = 0
+                R_{ij}-\frac{1}{2} R g_{ij} = 0
+            \end{equation*}
+            But first we need to fully understand the terms that appears in the equation.
+            We shall start by defining what is a metric.
+            The term $g_{ij}$ is a metric.
+            It is a fundamental part of general relativity.
+        \subsection{Metrics}
+            To describe a metric we will start with the case of a 3D cartesian space and then generalised the definition of a metric.
+            In Cartesian coordinate, we can define an infinitesimal line element as :
+            \begin{equation*}
+                ds^2 = dx^2 + dy^2 + dz^2
+            \end{equation*}
+            But this obviously doesn't work for a more complicated space, if we consider a spherical space for instance.
+            This line element would need some correction.
+            We can also introduce the time dimension to the line element, getting a generalized form as follow : 
+            \begin{equation}
+                ds^2 = g_{ij}dX^idX^j
+            \end{equation}
+            $g_{ij}$ is a tensor and $dX^i=\{t,x,y,z\}$.
+            The next thing that we'll need to study are the shortest distances between two points.
+            It is for this purpose that we want to study geodesics.
+        \subsection{Geodesics}
+            % Careful with the following sentence (copy of Bohemer's)
+            Considering an arbitrary curve $C$ given by : $X^i=X^i(\lambda)$, in a space with metric $g_{ij}$, we have :
+            \begin{equation}
+                s = \int ds=\int\sqrt{g_{ij}\dot{X}^i\dot{X}^j}d\lambda
+            \end{equation}
+            The $s$ arclength can be use to find the distance between two points.
+            What interest us is to find the shortest distance between two points.
+            % Need to continue towards Christoffel Symbols 
+            [...]
+        \subsection{Christoffel Symbols}
+            The Christoffel Symbols doesn't explicitly appears in the Einstei field equation but it is a central element to compute the Ricci and Rieman tensor.
+            To define a Christoffel symbol, we need to first define what is a covariant derivative :
+            % Definition from Bohemer's book
+            \newtheorem{mydef}{Definition}
+            \begin{mydef}
+                (Covariant derivative)
+                A covariant derivative (sometimes derivative operator) $\nabla_a$ on a manifold $\mathcal{M}$ is a mapping which takes a type (p,q) tensor to a tensor (p,q+1) with the follow properties :
+                \begin{enumerate}
+                    \item For any smooth function $f$ the covariant derivative coincides with the partial derivative
+                \end{enumerate}
+            \end{mydef}
+    \end{document}
