@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+
+\title{Kerr and Schwarzschild spacetimes derived differently}
+\author{Adrien Sasportes}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+\section{Geometry and space-time}
+
+\section{Vaidya type metric in GR}
+
+\section{Deriving Schwarzschild differently}
+In this section we will be interested in trying to find Schwarzschild differently using the general Kerr-Shild form :
+\begin{equation*}
+	g_{ij}=\eta_{ij}+2H(r)k_ik_j
+\end{equation*}
+The Schwarzschild solution is a really important solutionin general relativity. It was discovered a little more than a month after Einstein had formulated General Relativity and it describes the gravitationnal field outside a static spherical mass.
+This solution can be used as an approximation for slowly rotating spherical astronomical object, like the Earth.
+\subsection{Classical way of finding the Schwarzschild solution}
+The usual way of finding the Schwarzschild metric usually start by writing the most general symmetric metric in vacuum :
+\begin{equation*}
+	ds^2=-e^{A(r)}dt^2+e^{B(r)}dr^2+r^2d\Omega^2
+\end{equation*}
+Then we compute the Einstein tensor, and we solve the Einstein vacuum field equation $G_{ab}=0$ by taking $G_{00}=0$ and $G_{11}=0$. Then we obtain the following equations :
+\begin{align*}
+	e^B+rB'-1&=0\\
+	-e^B+rA'+1&=0
+\end{align*}
+From which we get :
+\begin{equation*}
+	e^A=e^{-B}=1-\frac{C}{r}
+\end{equation*}
+And thus we have the Schwarzschild solution :
+\begin{equation*}
+	ds^2=-(1-\frac{C}{r})dt^2+(1-\frac{C}{r})^{-1}dr^2+r^2d\Omega^2
+\end{equation*}
+This method of finding the Schwarzschild solution is work perfectly way but still it is always interesting to find an alternative way to find it.
+\subsection{Elements of the Kerr-Shild for the Schwarzschild case}
+We now want to focus on a metric of the following form $g_{ij}=\eta_{ij}+2H(r)k_ik_j$.
+First in the Schwarzschild case we consider a spherical object so we consider some $r$ such that $r^2=x^2+y^2+z^2$.
+$\eta_{ij}$ is known as the Minkowski metric defines as $\eta_{ij}=diag(+1,+1,+1,-1)$
+As for the $H$ we guess that it would only depend on $r$.
+We define $k_i=(-1,\frac{x}{r},\frac{y}{r},\frac{z}{r})$, a null geodesic.
+We notice that $k_ik^i=0 <=> r^2=x^2+y^2+z^2$.
+Looking at the $x$, $y$ and $z$ components of $k$, $k$ looks like a radial vector, but we have a $-1$ in the $t$ direction.
+\subsection{Einstein vacuum field equation}
+From the formula we derived for $G_{ij}$ for metric of this form we can fairly easily obtain the Einstein tensor.
+Looking at $G_{i0}, i=1,2,3$ we get :
+\begin{equation}
+	G_{i0}=-\frac{8 H(r) \left(r^2 H'(r)+rH(r)\right)}{\left(r^2\right)^{3/2}}
+\end{equation}
+Our goal is to find $H(r)$ that solves the Einstein vacuum field equation $G_{ij}=0$ which in our case is $G_{i0}=0, i=1,2,3$ or :
+\begin{equation}
+	-\frac{8 H(r) \left(r^2 H'(r)+rH(r)\right)}{\left(r^2\right)^{3/2}}=0
+\end{equation}
+Which in general is equivalent to :
+\begin{equation}
+	rH'(r)+H(r)=0
+\end{equation}
+This equation is quite nice and can easily be solved as follow :
+\begin{align*}
+	rH'(r)+H(r)&=0\\
+	r\frac{d}{dr}H(r)&=-H(r)\\
+	\frac{1}{H(r)}\frac{d}{dr}H(r)&=-\frac{1}{r}\\
+	\frac{1}{H(r)}dH(r)&=-\frac{1}{r}dr \;\\
+	&\text{, integrating,}\\
+	log(H(r))&=-\log{r}+C \;\\
+	&\text{, with C constant}\\
+	H(r)&=\frac{C}{r}
+\end{align*}
+Giving us :
+\begin{equation}
+	g_{ij}=\eta_{ij}+\frac{2C}{r}k_ik_j
+\end{equation}
+This is the Schwarzschild solution. As it is not so obvious in this form, in the next sub-section, we will put in back in the "classical form".
+\subsection{Back to the classical form of the Schwarzschild solution}
+In order to be able to find the classical Schwarzschild form we should first write the line element of the metric we found explcitly :
+\begin{align*}
+	ds^2&=g_{ij}dX^idX^j\\
+	ds^2&=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2\\
+	ds^2&=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+\frac{x^2}{r^2})dx^2+(\frac{2C}{r}+\frac{y^2}{r^2})dy^2+(\frac{2C}{r}+\frac{z^2}{r^2})dz^2\\
+	&+\frac{4C}{r}(dxdy+dxdz+dydz-dtdx-dtdy-dtdz)
+\end{align*}
+
+\section{Deriving Kerr differently}
+Now we want to use the same method we used for the Schwarzschild solution to find the Kerr solution.
+The Kerr metric is another exact solution of the Einstein field equations found in 1963 by Roy P. Kerr.
+It is a generalisation of the Schwarzschild solution, it describes an axially-symmetric rotating object.
+This metric is often used to describe rotating black-holes.\\
+/Image/
+\subsection{Classical way of finding the Kerr solution}
+
+\section{Conclusion}
+
+\end{document}
