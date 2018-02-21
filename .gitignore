@@ -1,3 +1,4 @@
 *
 !.gitignore
-!*/Project.tex
+!Project.tex
+!*/
