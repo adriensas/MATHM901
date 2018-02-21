@@ -81,11 +81,63 @@ Giving us :
 This is the Schwarzschild solution. As it is not so obvious in this form, in the next sub-section, we will put in back in the "classical form".
 \subsection{Back to the classical form of the Schwarzschild solution}
 In order to be able to find the classical Schwarzschild form we should first write the line element of the metric we found explcitly :
+\begin{equation*}
+	ds^2=g_{ij}dX^idX^j
+\end{equation*}
+\begin{equation}
+	ds^2=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
+\end{equation}
+In order to find the classical form of the Schwarzschild metric, we will right this line element in spherical coordinates $X=\{t,r,\theta,\phi\}$ define as :
 \begin{align*}
-	ds^2&=g_{ij}dX^idX^j\\
-	ds^2&=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2\\
-	ds^2&=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+\frac{x^2}{r^2})dx^2+(\frac{2C}{r}+\frac{y^2}{r^2})dy^2+(\frac{2C}{r}+\frac{z^2}{r^2})dz^2\\
-	&+\frac{4C}{r}(dxdy+dxdz+dydz-dtdx-dtdy-dtdz)
+	&t=t\\
+	&r^2=x^2+y^2+z^2
+\end{align*}
+\begin{align}
+	&x=r\sin{\theta}\cos{\phi}\label{coord-transform-1}\\
+	&y=r\sin{\theta}\sin{\phi}\\
+	&z=r\cos{\theta}\label{coord-transform-3}
+\end{align}
+As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and another element we can immediatly replace the Minkowski part of our metric with the Minkowski metric in spherical coordinates :
+\begin{equation} \label{line-elem-schwarz}
+	ds^2=-dt^2+dr^2+r^2d\Omega^2\;+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
+\end{equation} 
+Now let's focus on $\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2$.\\
+First we want to write $dx$, $dy$, $dz$ as a linear sum of $dr$, $d\theta$, $d\phi$, so we first right :
+\begin{align*}
+	&dx=\frac{\partial x}{\partial r}dr+\frac{\partial x}{\partial \theta}d\theta+\frac{\partial x}{\partial \phi}d\phi\\
+	&dy=\frac{\partial y}{\partial r}dr+\frac{\partial y}{\partial \theta}d\theta+\frac{\partial y}{\partial \phi}d\phi\\
+	&dz=\frac{\partial z}{\partial r}dr+\frac{\partial z}{\partial \theta}d\theta+\frac{\partial z}{\partial \phi}d\phi
+\end{align*}
+Which gives :
+\begin{align}
+	&dx=\sin{\theta}\cos{\phi}dr+r\cos{\theta}\cos{\phi}d\theta-r\sin{\theta}\sin{\phi}d\phi \\
+	&dy=\sin{\theta}\sin{\phi}dr+r\cos{\theta}\sin{\phi}d\theta+r\sin{\theta}\cos{\phi}d\phi \\
+	&dz=\cos{\theta}dr-r\sin{\theta}d\theta
+\end{align}
+Back into (\ref{line-elem-schwarz}), looking inside the squared parenthesis, and using also (\ref{coord-transform-1})-(\ref{coord-transform-3}), we can replace as follow :
+\begin{align*}
+	-dt+\frac{x}{r}dx+&\frac{y}{r}dy+\frac{z}{r}dz =-dt\\
+	&+\sin{\theta} \cos{\phi} (\sin{\theta} \cos{\phi} dr+r\cos{\theta} \cos{\phi} d\theta -r\sin{\theta} \sin{\phi} d\phi )\\
+	&+\sin{\theta} \sin{\phi} (\sin{\theta} \sin{\phi} dr+r\cos{\theta} \sin{\phi} d\theta +r\sin{\theta} \cos{\phi} d\phi )\\
+	&+\cos{\theta} (\cos{\theta} dr-\sin{\theta} d\theta )
+\end{align*}
+This equation is quite long but is is simplifiable. In order to see it  we will look at $dr$, $d\theta$, $d\phi$ separatly :
+\begin{align*}
+	dr :& \\
+	&\sin^2{\theta}\cos^2{\phi}+\sin{\theta}^2\sin^2{\phi}+\cos^2{\phi}=\sin^2{\theta}+\cos^2{\theta}=1\\
+	d\theta :& \\
+	&r(\sin{\theta}\cos{\theta}\cos^2{\phi}+\sin{\theta}\cos{\theta}\sin^2{\phi}-\cos{\theta}\sin{\phi})=r(\sin{\theta}\cos{\theta}-\sin{\theta}\cos{\theta})=0\\
+	d\phi :& \\
+	&r(-\cos{\phi}\sin{\phi}\sin^2{\theta}+\sin^2{\theta}\cos{\phi}\sin{\phi})=0
+\end{align*}
+Hence if we replace in (\ref{line-elem-schwarz}) we get :
+\begin{equation*}
+	ds^2=-dt^2+dr^2+r^2d\Omega^2+\frac{2C}{r}(-dt+dr)^2
+\end{equation*}
+Expanding :
+\begin{align*}
+	&ds^2=-dt^2+dr^2+r^2d\Omega^2+\frac{2C}{r}(dt^2+dr^2-2dtdr)\\
+	&ds^2=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+1)dr^2+r^2d\Omega^2-\frac{4C}{r}dtdr
 \end{align*}
 
 \section{Deriving Kerr differently}
