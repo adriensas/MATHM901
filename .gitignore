@@ -1,4 +1,3 @@
-Main.aux
-Main.dvi
-Main.log
-textput.log
+*
+!.gitignore
+!./Latex/Project.tex
