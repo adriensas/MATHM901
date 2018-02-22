@@ -1,6 +1,9 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{amsmath}
+	\usepackage{amsmath}
+	\usepackage{amsthm}
+	\usepackage{amssymb}
 
+\theoremstyle{definition}
 \title{Kerr and Schwarzschild spacetimes derived differently}
 \author{Adrien Sasportes}
 
@@ -8,10 +11,32 @@
 
 \maketitle
 \pagenumbering{arabic}
+\newtheorem{definition}{Definition}
 
 \section{Introduction}
 
 \section{Geometry and space-time}
+This project focus on general relativity and require some knowledge on the subject.
+General Relativity is an adequation between gravity and the curvature of the space-time.
+Thus it seems normal to start it with a short introduction to geometry and space-time.
+Before talking about curvature of the space-time we must first start to define it.
+\subsection{Manifold and metric}
+In order to define space time, we first need to define a manifold.
+A manifold is a topological space that locally resembles Euclidian space near each point.
+More formaly :
+\begin{definition}
+	\textbf{Manifold} :An $n$-dimensional smooth manifold $\mathcal{M}$ is a set together with a collection of coordinates $\{ X^i_{(\alpha)}\}$
+	with $\alpha \in \mathbb{N}$ and $i=1,2,...,n$. These satisfy :
+	\begin{enumerate}
+		\item Every point $p\in\mathcal{M}$ is also in at least one $\{\Omega_\alpha\}$.
+		This mean that the collection $\{\Omega_\alpha\}$ will contain every point $p$,
+		we say that the manifold is covered by $\{\Omega_\alpha\}$.
+		\item For each $\alpha$ the coordinates $\{ X^i_{(\alpha)}\}$ are bijective functions $X^i_{(\alpha)}:\Omega_\alpha \mapsto O_\alpha \subset \mathbb{R}^n$
+		where the $O_\alpha$ are also open.
+		\item If any $U_\alpha$ and $U_\beta$ overlap, then the coordinates $\{ X^i_{(\alpha)}\}$ and $\{ X^i_{(\beta)}\}$
+		are related by a coordinarte transformation on the intersection $U_\alpha \cap U_\beta$.
+	\end{enumerate}
+\end{definition}
 
 \section{Vaidya type metric in GR}
 
@@ -48,16 +73,16 @@ $\eta_{ij}$ is known as the Minkowski metric defines as $\eta_{ij}=diag(+1,+1,+1
 As for the $H$ we guess that it would only depend on $r$.
 We define $k_i=(-1,\frac{x}{r},\frac{y}{r},\frac{z}{r})$, a null geodesic.
 We notice that $k_ik^i=0 <=> r^2=x^2+y^2+z^2$.
-Looking at the $x$, $y$ and $z$ components of $k$, $k$ looks like a radial vector, but we have a $-1$ in the $t$ direction.
+We notice that the spatial part of $k_i$ is a radial components but is the metric symmetric?
 \subsection{Einstein vacuum field equation}
 From the formula we derived for $G_{ij}$ for metric of this form we can fairly easily obtain the Einstein tensor.
 Looking at $G_{i0}, i=1,2,3$ we get :
 \begin{equation}
-	G_{i0}=-\frac{8 H(r) \left(r^2 H'(r)+rH(r)\right)}{\left(r^2\right)^{3/2}}
+	G_{i0}=-\frac{8 H(r) (r^2 H'(r)+rH(r))}{(r^2)^{3/2}}
 \end{equation}
 Our goal is to find $H(r)$ that solves the Einstein vacuum field equation $G_{ij}=0$ which in our case is $G_{i0}=0, i=1,2,3$ or :
 \begin{equation}
-	-\frac{8 H(r) \left(r^2 H'(r)+rH(r)\right)}{\left(r^2\right)^{3/2}}=0
+	-\frac{8 H(r) (r^2 H'(r)+rH(r))}{(r^2)^{3/2}}=0
 \end{equation}
 Which in general is equivalent to :
 \begin{equation}
@@ -87,7 +112,7 @@ In order to be able to find the classical Schwarzschild form we should first wri
 \begin{equation}
 	ds^2=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
 \end{equation}
-In order to find the classical form of the Schwarzschild metric, we will right this line element in spherical coordinates $X=\{t,r,\theta,\phi\}$ define as :
+In order to find the classical form of the Schwarzschild metric, we will this line element in spherical coordinates $X=\{t,r,\theta,\phi\}$ define as :
 \begin{align*}
 	&t=t\\
 	&r^2=x^2+y^2+z^2
@@ -102,7 +127,7 @@ As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and anothe
 	ds^2=-dt^2+dr^2+r^2d\Omega^2\;+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
 \end{equation} 
 Now let's focus on $\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2$.\\
-First we want to write $dx$, $dy$, $dz$ as a linear sum of $dr$, $d\theta$, $d\phi$, so we first right :
+First we want to write $dx$, $dy$, $dz$ as a linear sum of $dr$, $d\theta$, $d\phi$, so we first :
 \begin{align*}
 	&dx=\frac{\partial x}{\partial r}dr+\frac{\partial x}{\partial \theta}d\theta+\frac{\partial x}{\partial \phi}d\phi\\
 	&dy=\frac{\partial y}{\partial r}dr+\frac{\partial y}{\partial \theta}d\theta+\frac{\partial y}{\partial \phi}d\phi\\
@@ -147,6 +172,59 @@ It is a generalisation of the Schwarzschild solution, it describes an axially-sy
 This metric is often used to describe rotating black-holes.\\
 /Image/
 \subsection{Classical way of finding the Kerr solution}
+Classical way of finding the Kerr metric is a complicated task.
+There don't exist many ressources on this subject, and the few ressources that are available are clearly not accessible to undergraduate student.
+They use complicated mathematical notion, and even a good mathematician would require some time to understand the proof.
+Hence it would be interesting to find a simpler way to derive the Kerr solution.
+\subsection{Elements of the Kerr-Shild for the Kerr case}
+Once again we take a metric of the form :
+\begin{equation*}
+	g_{ij}=\eta_{ij}+2H(r,z)k_ik_j
+\end{equation*}
+This time we take $H$ to be dependant of $r$ and $z$ to take into account the axial symmetry.
+We consider $r$ such that :
+\begin{equation*}
+	\frac{x^2+y^2}{r^2+a^2}+\frac{z^2}{r^2}=1
+\end{equation*}
+With $a$ the source angular momentum per unit mass.
+We notice that as $aarrow 0$ we get the spherical $r$ as before.
+And let $k$ be :
+\begin{equation*}
+	k_i=(-1,\frac{r x + a y}{r^2 + a^2},\frac{ry-ax}{r^2+a^2},\frac{z}{r})
+\end{equation*}
+Similarly we took $k_i$ to be a generalisation of the Schwarzschild $k_i$ as when $aarrow 0$ we get the Schwarzschild $k_i$.
+\subsection{Einstein vacuum field equation}
+This time finding the Einstein tensor is a bit more challenging.
+The Schwarzschild case computed by hand is already a long calculation and adding a dregree a freedom in the Kerr case complicate even more the calculation.
+Using a computer program like Mathematica, we can find the Einstein tensor components.
+The simplest element of the Einstein tensor after simplifying as much as possible is $G_{00}$ :
+\begin{align*}
+	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z H^{(1,1)}(r,z)-a^2 r^2 z^2 H^{(0,2)}(r,z)+a^2 r^2(z^2-r^2) H^{(2,0)}(r,z)\\
+	&-2 H(r,z) (z^2 (a^2z^2+r^4) H^{(0,2)}(r,z)+r ((a^2 z^2+r^4)(2 z H^{(1,1)}(r,z)+r H^{(2,0)}(r,z))\\
+	&+4r^4H^{(1,0)}(r,z)-r^3)+4 r^4 z H^{(0,1)}(r,z))+a^2 z^4H^{(0,2)}(r,z)+2 a^2 r z^3 H^{(1,1)}(r,z)\\
+	&+r^6(-H^{(0,2)}(r,z))+2 r^5 H^{(1,0)}(r,z)+r^4 z^2H^{(0,2)}(r,z)+4 r^4 z H^{(0,1)}(r,z)-4 r^4 H(r,z)^2)
+\end{align*}
+And even by carefully choosing the best looking term of the Einstein tensor it seems like we won't be able to solve the vacuum field equation $G_{ij}=0$.
+We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
+\begin{align*}
+	R_{00}=-\frac{(a^2 z^2+r^4) H^{(0,2)}(r,z)+r
+	((a^2+r^2) (2 z H^{(1,1)}(r,z)+r
+	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
+\end{align*}
+It is a little bit better but still it is a second order PDE that can be quite difficult to solve.
+As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can exptect to complete in a few days.
+It require a bit of research an work.
+The good news is : Once you found a method to simplify the equation and make it solvable, the proof that you can find the Kerr metric using an Ansaltz in the Kerr-Schild is short and easy.
+A good approach, the one that we are going to take, is to equate to zero a combination of parts of the Ricci tensor.
+Indeed if we choose the following combination equal to $0$ :
+\begin{equation*}
+	(r^4+a^2z^2)^3(zR_{00}+rR_{03}+\frac{a^2+r^2}{rx+ay}(zR_{10}+rR_{13}))=0
+\end{equation*}
+We obtain the following 1st order PDE :
+\begin{equation}
+	(a^2 z^2+r^4) (z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
+\end{equation}
+We hence finally obtain an equation that is nice looking, and that we can solve.
 
 \section{Conclusion}
 
