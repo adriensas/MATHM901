@@ -19,13 +19,15 @@
 This project focus on general relativity and require some knowledge on the subject.
 General Relativity is an adequation between gravity and the curvature of the space-time.
 Thus it seems normal to start it with a short introduction to geometry and space-time.
+General relativity uses a special branch of diffential geometry called Riemannian geometry, named after Bernhard Riemann.
 Before talking about curvature of the space-time we must first start to define it.
 \subsection{Manifold and metric}
 In order to define space time, we first need to define a manifold.
 A manifold is a topological space that locally resembles Euclidian space near each point.
 More formaly :
 \begin{definition}
-	\textbf{Manifold} :An $n$-dimensional smooth manifold $\mathcal{M}$ is a set together with a collection of coordinates $\{ X^i_{(\alpha)}\}$
+	\textbf{Manifold} :\\
+	An $n$-dimensional smooth manifold $\mathcal{M}$ is a set together with a collection of coordinates $\{ X^i_{(\alpha)}\}$
 	with $\alpha \in \mathbb{N}$ and $i=1,2,...,n$. These satisfy :
 	\begin{enumerate}
 		\item Every point $p\in\mathcal{M}$ is also in at least one $\{\Omega_\alpha\}$.
@@ -36,6 +38,129 @@ More formaly :
 		\item If any $U_\alpha$ and $U_\beta$ overlap, then the coordinates $\{ X^i_{(\alpha)}\}$ and $\{ X^i_{(\beta)}\}$
 		are related by a coordinarte transformation on the intersection $U_\alpha \cap U_\beta$.
 	\end{enumerate}
+\end{definition}
+Now we have define a space on which we can define scalars vector and tensor.
+In order to be able to study this space we would like to be able to measure angles between two curves and the distance between two points.
+The object that will allow us to do that is the metric, wrote as $g_{ij}$, which is a rank-2 symmetric tensor.
+We can understand the origin of the metric by starting by measuring small distance in the Euclidian space using Pythagoras' theorem :
+\begin{equation*}
+	\Delta s^2= \Delta x^2 + \Delta y^2 + \Delta z^2
+\end{equation*}
+Passing to infinitesimal :
+\begin{equation}\label{dist}
+	ds^2= dx^2 + dy^2 + dz^2
+\end{equation}
+We see that this distance is independant of the position and this is not surprising as flat space is the same everywhere.
+But if we want to study curved we can easily understand that we need to take into account the curvature in order to compute the distance between two points.\\
+/IMAGE/\\
+We thus need to generalise (\ref{dist}).
+If we consider a coordinate set $X$ we can define a general infinitesimal distance on any smooth space by multiplying each combination of $dX^idX^j$ by some arbitrary function.
+This can be wrote as follow :
+\begin{equation*}
+	ds^2=g_{ij}dX^idX^j
+\end{equation*}
+The set of arbitrary function $g_{ij}$ is what we called a metric and $ds^2$ is called the line element.
+The line element gives us a full description of our surface.\\
+A formal definition of the metric and line element can be written :
+\begin{definition}
+	\textbf{Metric and line element} :\\
+	Let $\mathcal{M}$ be an $n$-dimensional smooth manifold.
+	The Riemannian metric tensor $g_{ij}$ defines the positive inner product such that $\langle , \rangle$ such that : 
+	\begin{equation*}
+		\langle U , V \rangle = g_{ij}U^iV^j
+	\end{equation*}
+	If $\langle , \rangle$, is only non-degenerate, then we call the corresponding metric pseudo-Riemannian.
+	The line element $ds^2$ is :
+	\begin{equation*}
+		ds^2=g_{ij}dX^idX^j
+	\end{equation*}
+	where the $X^i$ are the coordinates in a patch of $\mathcal{M}$.
+\end{definition}
+\subsection{Geodesics and curvature}
+To understand the concept of geodesic, we will first look at the 2D flat space case.
+Hence let us consider a manifold $\mathcal{M}$ and a curve $C$ given by $X^i=X^i(\tau)$
+In our 2D flat space, we have $X^i=\{x,y\}$ and a line element of the form $ds^2=dx^2+dy^2$.
+In this case the curve can be written as follow $(x,y)=(x(\tau),y(\tau))$.
+Let us eliminate $\tau$ by writing our curve in the form $y=y(x)$ giving $dy=y'(x)dx$ such that our line element becomes $ds^2=dx^2+y'(x)dx^2$.
+And hence :
+\begin{equation*}
+	s=\int ds=\int \sqrt{1+y'(x)^2}dx
+\end{equation*}
+Now let us generalise to an arbitrary curve $C$ given by $X^i=X^i(\lambda)$ with an affine parametrisation :
+\begin{equation*}
+	s=\int ds=\int \sqrt{g_{ij}\dot{X}^i\dot{X}^j}d\lambda
+\end{equation*}
+This can be used to measure the distance between two point connected by a curve $C$.
+In general relativity we are interested in the curves that minimise the distance between two points.
+This focus is related to the Hamiltonian's principle or principle of least action.
+To find the shortest lines between to points, we can use the Lagrangian method and write :
+\begin{equation*}
+	L(X^i,\dot{X}^j)=\sqrt{g_{ij}\dot{X}^i\dot{X}^j}
+\end{equation*}
+And the Euler-Lagrange are given by :
+\begin{equation}\label{Eul_Lag}
+	\frac{\partial L}{\partial X^k}=\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}
+\end{equation}
+Let us begin with the left hand side of the (\ref{Eul_Lag}), and replace :
+\begin{equation*}
+	\frac{\partial L}{\partial X^k}=\frac{1}{2L}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j
+\end{equation*}
+And also for the right hand side :
+\begin{equation*}
+	\frac{\partial L}{\partial \dot{X}^k}=\frac{1}{2L}g_{ki}\dot{X}^i
+\end{equation*}
+Before continuing, we remember that we took an affine parametrisation $\lambda$, hence $L=1$ :
+\begin{equation*}
+	\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}=
+	\frac{\partial g_{ki}}{\partial X^m}\dot{X}^m\dot{X}^i+g_{ki}\ddot{X}^i
+\end{equation*}
+Hence the Euler-Lagrange equations are :
+\begin{equation*}
+	\frac{1}{2}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j=
+	\frac{\partial g_{ki}}{\partial X^m}\dot{X}^m\dot{X}^i+g_{ki}\ddot{X}^i
+\end{equation*}
+And we can rewrite the equation as :
+\begin{equation}\label{Eul_Lag}
+	g_{ki}\ddot{X}^i+\frac{1}{2}(\partial_m g_{ki}\dot{X}^m\dot{X}^i+\partial_m g_{ki}\dot{X}^m\dot{X}^i-\partial_k g_{ij}\dot{X}^i\dot{X}^j)=0
+\end{equation}
+It may seems that this modification complicate the expression but we would like to introduce an important element of general relativity : the Christoffel symbol.
+The Christoffel symbol is define as follow :
+\begin{equation}\label{Chris}
+	\Gamma^n_{ij}=\frac{1}{2}g^{nk}(\partial_i g_{jk}+\partial_j g_{ki}-\partial_k g_{ij})
+\end{equation}
+By multiplying (\ref{Eul_Lag}) by $g^{nk}$ we can insert the Christoffel symbol in our equation :
+\begin{equation*}
+	\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
+\end{equation*}
+Hence we can define a geodesic :
+\begin{definition}
+	\textbf{Geodesics} :\\
+	A curve $C$ given by $X^i(\tau)$ with affine parameter $\tau$ is called a geodesic if it satisfies the equation
+	\begin{equation*}
+		\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
+	\end{equation*}
+	where $\Gamma^n_{ij}$ are given by (\ref{Chris}).
+\end{definition}
+Now let's talk about curvature. In general relativity curvature is described by the Riemann tensor.
+In order to define it we'll first start by computing $\nabla _a \nabla _d V^b$ :
+\begin{align*}
+	\nabla _a \nabla _d V^b &= \partial_a(\nabla _d V^b)-\Gamma^i_{ad} (\nabla _i V^b)+\Gamma^b_{aj} (\nabla _d V^j)\\
+	&=\partial_a\partial_d V^b+ \partial_a \Gamma^b_{di}V^i+ \Gamma^b_{di}\partial_a V^i - \Gamma^i_{ad}\partial_i V^b
+	-\Gamma^i_{ad}\Gamma^b_{ij}V^j+\Gamma^b_{aj}\partial_d V^j-\Gamma^b_{aj}\Gamma^j_{di}V^i
+\end{align*}
+Now let's susubstract $\nabla _d \nabla _a V^b$ from this so that we comutator of two covariant derivatives and we obtain :
+\begin{equation*}
+	(\nabla _a \nabla _d - \nabla _d \nabla _a)V^b=(\partial_a \Gamma^b_{di}-\partial_d \Gamma^b_{ai}+\Gamma^b_{dj}\Gamma^j_{ai}-\Gamma^b_{aj}\Gamma^j_{di})V^i
+\end{equation*}
+\\/MORE TO SAY/\\
+Thus we can define the Riemann curvature tensor :
+\begin{definition}
+	\textbf{Riemann curvature tensor} :\\
+	Let $\nabla_a$ be a covariant derivative and let $V^b$ be a vector. The equation
+	\begin{equation*}
+		\nabla _a \nabla _d V^b - \nabla _d \nabla _aV^b=-R_{adi}^b V^i
+	\end{equation*}
+	defines the Riemann curvature tensor $R_{adi}^b$.
 \end{definition}
 
 \section{Vaidya type metric in GR}
