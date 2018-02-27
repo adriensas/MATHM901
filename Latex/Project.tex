@@ -202,10 +202,49 @@ But first, let's define the Einstein tensor :
 
 % ------------------------KERR-SCHILD TYPE METRIC IN GR------------------------
 \section{Kerr-Schild type metric in GR}
-As the two next part will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Shild Ansatz.
+As the two next section will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Shild Ansatz.
 Thus we will take some time to study this metric, its history and some useful identity.
 \subsection{What is it used for}
-\subsection{Some nice identity}
+\subsection{Some nice identity and properties}
+As we will work with Kerr-Shild type metric, we will be interest in deriving some identity and poperty of the metric.
+First let's write it again :
+\begin{equation}
+	g_{ij}=\eta_{ij}+2Hk_ik_j
+\end{equation}
+with $k^i$ null geodesic with regard of $g^{ij}$ and the Minkowski matrice $\eta_{ij}$.
+And $H$ an arbitrary function.
+For null geodesics, by definition, we have :
+\begin{equation}
+	g^{ij}k_ik_l=0
+\end{equation}
+and since $k^i$ is also null with regard of $\eta_{ij}$ :
+\begin{equation}
+	\eta^{ij}k_ik_l=0
+\end{equation}
+Such that we thus have the following :
+\begin{align}
+	g^{ij}k_ik_l=\eta^{ij}k_ik_l \label{I:kequi}\\
+	g^{ij}k_i=\eta^{ij}k_i=k^j \label{I:kupper}
+\end{align}
+This will be useful to find other properties.
+We can now try to derive a nice formula for the inverse of $g_{ij}$.
+We begin with the definition of the inverse of a matice :
+\begin{gather*}
+	g^{jk}g_{ij}=\delta^k_i \\
+	\text{We then explicitly write } g_{ij},\\
+	g^{jk}(\eta_{ij}+2Hk_ik_j)=\delta^k_i\\
+	\text{and expanding,}\\
+	g^{jk}\eta_{ij}+2Hg^{jk}k_ik_j)=\delta^k_i\\
+	\text{now we replace using (\ref{I:kupper})}\\
+	g^{jk}\eta_{ij}+2Hk_ik^k)=\delta^k_i\\
+	\text{we multiply both sides by }\eta^{il},\\
+	g^{jk}\delta^l_j+2Hk^lk^k=\eta^{il}\delta^k_i\\
+	\text{then we replace $j=l$ and $i=k$}\\
+\end{gather*}
+\begin{equation}
+	g^{kl}=\eta^{kl}-2Hk^kk^l
+\end{equation}
+We then have a nice formula for $g^{ij}$ that we will implicitly use in the next parts.
 
 % ------------------------DERIVING SCHWARZCHILD DIFFERENTLY------------------------
 \section{Deriving Schwarzschild differently}
