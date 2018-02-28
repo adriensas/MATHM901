@@ -60,7 +60,6 @@ Passing to infinitesimal :
 \end{equation}
 We see that this distance is independant of the position and this is not surprising as flat space is the same everywhere.
 But if we want to study curved we can easily understand that we need to take into account the curvature in order to compute the distance between two points.\\
-/IMAGE/\\
 We thus need to generalise (\ref{dist}).
 If we consider a coordinate set $X$ we can define a general infinitesimal distance on any smooth space by multiplying each combination of $dX^idX^j$ by some arbitrary function.
 This can be wrote as follow :
@@ -113,7 +112,7 @@ Let us begin with the left hand side of the (\ref{Eul_Lag}), and replace :
 \begin{equation*}
 	\frac{\partial L}{\partial X^k}=\frac{1}{2L}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j
 \end{equation*}
-And also for the right hand side :
+And also for the hand side :
 \begin{equation*}
 	\frac{\partial L}{\partial \dot{X}^k}=\frac{1}{2L}g_{ki}\dot{X}^i
 \end{equation*}
@@ -374,12 +373,12 @@ Expanding :
 	&ds^2=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+1)dr^2+r^2d\Omega^2-\frac{4C}{r}dtdr
 \end{align*}
 We are beginning to see a little better the Schwarzschild as originally found.
-Actually, with an easy coordinate change, $dt\rightarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
+Actually, with an easy coordinate change, $dtarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
 \begin{equation}
 	ds^2=-(1-\frac{2C}{r})dt^2+2dtdr+r^2d\Omega^2
 \end{equation}
 This form of the Schwarzschild metric is often used to study travelling light ray.
-Now in order to get the original Schwarzschild we will introduce a bit harder coordinate chande, $dt\rightarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
+Now in order to get the original Schwarzschild we will introduce a bit harder coordinate chande, $dtarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
 \begin{equation*}
 	ds^2=\frac{1}{r(2C-r)}((4C^2-4rC+r^2)dt^2-r^2dr)+r^2d\Omega^2
 \end{equation*}
@@ -395,7 +394,6 @@ Now we want to use the same method we used for the Schwarzschild solution to fin
 The Kerr metric is another exact solution of the Einstein field equations found in 1963 by Roy P. Kerr.
 It is a generalisation of the Schwarzschild solution, it describes an axially-symmetric rotating object.
 This metric is often used to describe rotating black-holes.\\
-/Image/
 \subsection{Classical way of finding the Kerr solution}
 Classical way of finding the Kerr metric is a complicated task.
 There don't exist many ressources on this subject, and the few ressources that are available are clearly not accessible to undergraduate student.
@@ -432,7 +430,7 @@ The simplest element of the Einstein tensor after simplifying as much as possibl
 And even by carefully choosing the best looking term of the Einstein tensor it seems like we won't be able to solve the vacuum field equation $G_{ij}=0$.
 We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
 \begin{align*}
-	R_{00}=-\frac{(a^2 z^2+r^4) H^{(0,2)}(r,z)+r
+	R_{00}=-\frac{(r^4+a^2z^2)H^{(0,2)}(r,z)+r
 	((a^2+r^2) (2 z H^{(1,1)}(r,z)+r
 	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
 \end{align*}
@@ -447,10 +445,57 @@ Indeed if we choose the following combination equal to $0$ :
 	(r^4+a^2z^2)^3(zR_{00}+rR_{03}+\frac{a^2+r^2}{rx+ay}(zR_{10}+rR_{13}))=0
 \end{equation*}
 We obtain the following 1st order PDE :
-\begin{equation}
-	(a^2 z^2+r^4) (z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
+\begin{equation}\label{Kerr:equation}
+	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
 \end{equation}
 We hence finally obtain an equation that is nice looking, and that we can solve.
+\subsection{Solving the equation}
+I can't say that we can solve the equation without solving it.
+So we will try to solve it.
+Let's have a look at it (\ref{Kerr:equation}) :
+\begin{equation*}
+	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
+\end{equation*}
+This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $(r^4-a^2 z^2)$ that may anoy us as they can't be eliminate and they contain a curious term $a^2z^2$.
+In order to get rid of this term we can try to define $P(r,z)$ such that $H(r,z)=P(r,z)(r^4+a^2z^2)^n(r^4-a^2 z^2)^m$ and then find convinient $n$ and $m$.
+Replacing $H(r,z)$ and simplifying, we obtain :
+\begin{align*}
+   (r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
+   &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1)))=0\\
+   &\text{Dividing by }(r^4-a^2 z^2)^{m-1} (a^2z^2+r^4)^n,\\
+   &(r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
+   &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0\\
+\end{align*}
+We obtain a nice form as we could eliminate all the $a^2z^2$ terms by choosing $m$ and $n$ such that :
+\begin{equation*}
+	(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=C*(r^8-a^4 z^4)
+\end{equation*}
+$C$ being a constant. Which gives us the following system :
+\begin{equation*}
+\begin{cases} -2 m-2 n+1=- (4 m+4 n+1)\\ m-n-1=0 \end{cases}
+\end{equation*}
+For which we find that $n=-1$, $m=0$ and our constant $C=-3$, therefore, now we deal with a function $H(r,z)$ of the form $H(r,z)=\frac{P(r,z)}{r^4+a^2z^2}$ and the following PDE :
+\begin{equation}\label{P:Eq}
+	z P^{(0,1)}(r,z)+r P^{(1,0)}(r,z)-3P(r,z)=0
+\end{equation}
+Not taking into account the $z$ dependance of our equation we would have :
+\begin{equation*}
+	P^{(1,0)}(r,z)=3P(r,z)
+\end{equation*}
+And hence $P(r,z)=Cr^3$. It would be quite nice to find a function $Q(r,z)$ such that $P(r,z)=Cr^3Q(r,z)$ is still a solution of our equation.
+Thus replacing $P(r,z)$ in (\ref{P:Eq}) would give us :
+\begin{align*}
+	r(z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z))=0\\
+	&\text{or}\\
+	z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z)=0
+\end{align*}
+For which we can find the general solution to be $Q(r,z)=Q(\frac{r}{z})$, as :
+\begin{align*}
+	&\frac{\partial Q(\frac{r}{z})}{\partial z}=\frac{-rQ'(\frac{r}{z})}{z^2}\\
+	&\frac{\partial Q(\frac{r}{z})}{\partial r}= \frac{Q'(\frac{r}{z})}{z}
+\end{align*}
+So far we were able to get a solution of the form $H(r,z)=\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$, which indeed contains the Kerr solution.
+We can do a bit better by replacing this in some components of the Einstein tensor and equate to $0$.
 
 % ------------------------CONCLUSION------------------------
 \section{Conclusion}
