@@ -51,9 +51,9 @@ Now we have define a space on which we can define scalars vector and tensor.
 In order to be able to study this space we would like to be able to measure angles between two curves and the distance between two points.
 The object that will allow us to do that is the metric, wrote as $g_{ij}$, which is a rank-2 symmetric tensor.
 We can understand the origin of the metric by starting by measuring small distance in the Euclidian space using Pythagoras' theorem :
-\begin{equation*}
+\begin{equation}
 	\Delta s^2= \Delta x^2 + \Delta y^2 + \Delta z^2
-\end{equation*}
+\end{equation}
 Passing to infinitesimal :
 \begin{equation}\label{dist}
 	ds^2= dx^2 + dy^2 + dz^2
@@ -63,9 +63,9 @@ But if we want to study curved we can easily understand that we need to take int
 We thus need to generalise (\ref{dist}).
 If we consider a coordinate set $X$ we can define a general infinitesimal distance on any smooth space by multiplying each combination of $dX^idX^j$ by some arbitrary function.
 This can be wrote as follow :
-\begin{equation*}
+\begin{equation}
 	ds^2=g_{ij}dX^idX^j
-\end{equation*}
+\end{equation}
 The set of arbitrary function $g_{ij}$ is what we called a metric and $ds^2$ is called the line element.
 The line element gives us a full description of our surface.\\
 A formal definition of the metric and line element can be written :
@@ -73,14 +73,14 @@ A formal definition of the metric and line element can be written :
 	\textbf{Metric and line element} :\\
 	Let $\mathcal{M}$ be an $n$-dimensional smooth manifold.
 	The Riemannian metric tensor $g_{ij}$ defines the positive inner product such that $\langle , \rangle$ such that : 
-	\begin{equation*}
+	\begin{equation}
 		\langle U , V \rangle = g_{ij}U^iV^j
-	\end{equation*}
+	\end{equation}
 	If $\langle , \rangle$, is only non-degenerate, then we call the corresponding metric pseudo-Riemannian.
 	The line element $ds^2$ is :
-	\begin{equation*}
+	\begin{equation}
 		ds^2=g_{ij}dX^idX^j
-	\end{equation*}
+	\end{equation}
 	where the $X^i$ are the coordinates in a patch of $\mathcal{M}$.
 \end{definition}
 \subsection{Geodesics and curvature}
@@ -90,42 +90,42 @@ In our 2D flat space, we have $X^i=\{x,y\}$ and a line element of the form $ds^2
 In this case the curve can be written as follow $(x,y)=(x(\tau),y(\tau))$.
 Let us eliminate $\tau$ by writing our curve in the form $y=y(x)$ giving $dy=y'(x)dx$ such that our line element becomes $ds^2=dx^2+y'(x)dx^2$.
 And hence :
-\begin{equation*}
+\begin{equation}
 	s=\int ds=\int \sqrt{1+y'(x)^2}dx
-\end{equation*}
+\end{equation}
 Now let us generalise to an arbitrary curve $C$ given by $X^i=X^i(\lambda)$ with an affine parametrisation :
-\begin{equation*}
+\begin{equation}
 	s=\int ds=\int \sqrt{g_{ij}\dot{X}^i\dot{X}^j}d\lambda
-\end{equation*}
+\end{equation}
 This can be used to measure the distance between two point connected by a curve $C$.
 In general relativity we are interested in the curves that minimise the distance between two points.
 This focus is related to the Hamiltonian's principle or principle of least action.
 To find the shortest lines between to points, we can use the Lagrangian method and write :
-\begin{equation*}
+\begin{equation}
 	L(X^i,\dot{X}^j)=\sqrt{g_{ij}\dot{X}^i\dot{X}^j}
-\end{equation*}
+\end{equation}
 And the Euler-Lagrange are given by :
 \begin{equation}\label{Eul_Lag}
 	\frac{\partial L}{\partial X^k}=\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}
 \end{equation}
 Let us begin with the left hand side of the (\ref{Eul_Lag}), and replace :
-\begin{equation*}
+\begin{equation}
 	\frac{\partial L}{\partial X^k}=\frac{1}{2L}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j
-\end{equation*}
+\end{equation}
 And also for the hand side :
-\begin{equation*}
+\begin{equation}
 	\frac{\partial L}{\partial \dot{X}^k}=\frac{1}{2L}g_{ki}\dot{X}^i
-\end{equation*}
+\end{equation}
 Before continuing, we remember that we took an affine parametrisation $\lambda$, hence $L=1$ :
-\begin{equation*}
+\begin{equation}
 	\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}=
 	\frac{\partial g_{ki}}{\partial X^m}\dot{X}^m\dot{X}^i+g_{ki}\ddot{X}^i
-\end{equation*}
+\end{equation}
 Hence the Euler-Lagrange equations are :
-\begin{equation*}
+\begin{equation}
 	\frac{1}{2}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j=
 	\frac{\partial g_{ki}}{\partial X^m}\dot{X}^m\dot{X}^i+g_{ki}\ddot{X}^i
-\end{equation*}
+\end{equation}
 And we can rewrite the equation as :
 \begin{equation}\label{Eul_Lag}
 	g_{ki}\ddot{X}^i+\frac{1}{2}(\partial_m g_{ki}\dot{X}^m\dot{X}^i+\partial_m g_{ki}\dot{X}^m\dot{X}^i-\partial_k g_{ij}\dot{X}^i\dot{X}^j)=0
@@ -136,37 +136,37 @@ The Christoffel symbol is define as follow :
 	\Gamma^n_{ij}=\frac{1}{2}g^{nk}(\partial_i g_{jk}+\partial_j g_{ki}-\partial_k g_{ij})
 \end{equation}
 By multiplying (\ref{Eul_Lag}) by $g^{nk}$ we can insert the Christoffel symbol in our equation :
-\begin{equation*}
+\begin{equation}
 	\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
-\end{equation*}
+\end{equation}
 Hence we can define a geodesic :
 \begin{definition}
 	\textbf{Geodesics} :\\
 	A curve $C$ given by $X^i(\tau)$ with affine parameter $\tau$ is called a geodesic if it satisfies the equation
-	\begin{equation*}
+	\begin{equation}
 		\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
-	\end{equation*}
+	\end{equation}
 	where $\Gamma^n_{ij}$ are given by (\ref{Chris}).
 \end{definition}
 Now let's talk about curvature. In general relativity curvature is described by the Riemann tensor.
 In order to define it we'll first start by computing $\nabla _a \nabla _d V^b$ :
-\begin{align*}
+\begin{align}
 	\nabla _a \nabla _d V^b &= \partial_a(\nabla _d V^b)-\Gamma^i_{ad} (\nabla _i V^b)+\Gamma^b_{aj} (\nabla _d V^j)\\
 	&=\partial_a\partial_d V^b+ \partial_a \Gamma^b_{di}V^i+ \Gamma^b_{di}\partial_a V^i - \Gamma^i_{ad}\partial_i V^b
 	-\Gamma^i_{ad}\Gamma^b_{ij}V^j+\Gamma^b_{aj}\partial_d V^j-\Gamma^b_{aj}\Gamma^j_{di}V^i
-\end{align*}
+\end{align}
 Now let's susubstract $\nabla _d \nabla _a V^b$ from this so that we comutator of two covariant derivatives and we obtain :
-\begin{equation*}
+\begin{equation}
 	(\nabla _a \nabla _d - \nabla _d \nabla _a)V^b=(\partial_a \Gamma^b_{di}-\partial_d \Gamma^b_{ai}+\Gamma^b_{dj}\Gamma^j_{ai}-\Gamma^b_{aj}\Gamma^j_{di})V^i
-\end{equation*}
+\end{equation}
 \\/MORE TO SAY/\\
 Thus we can define the Riemann curvature tensor :
 \begin{definition}
 	\textbf{Riemann curvature tensor} :\\
 	Let $\nabla_a$ be a covariant derivative and let $V^b$ be a vector. The equation
-	\begin{equation*}
+	\begin{equation}
 		\nabla _a \nabla _d V^b - \nabla _d \nabla _aV^b=-R_{adi}^b V^i
-	\end{equation*}
+	\end{equation}
 	defines the Riemann curvature tensor $R_{adi}^b$.
 \end{definition}
 More than the formal definition we would be interested in writing it explicitly :
@@ -250,29 +250,29 @@ We now have a nice formula for $g^{ij}$ that we will implicitly use in the next 
 % ------------------------DERIVING SCHWARZCHILD DIFFERENTLY------------------------
 \section{Deriving Schwarzschild differently}
 In this section we will be interested in trying to find Schwarzschild differently using the general Kerr-Shild form :
-\begin{equation*}
+\begin{equation}
 	g_{ij}=\eta_{ij}+2H(r)k_ik_j
-\end{equation*}
+\end{equation}
 The Schwarzschild solution is a really important solutionin general relativity. It was discovered a little more than a month after Einstein had formulated General Relativity and it describes the gravitationnal field outside a static spherical mass.
 This solution can be used as an approximation for slowly rotating spherical astronomical object, like the Earth.
 \subsection{Classical way of finding the Schwarzschild solution}
 The usual way of finding the Schwarzschild metric usually start by writing the most general symmetric metric in vacuum :
-\begin{equation*}
+\begin{equation}
 	ds^2=-e^{A(r)}dt^2+e^{B(r)}dr^2+r^2d\Omega^2
-\end{equation*}
+\end{equation}
 Then we compute the Einstein tensor, and we solve the Einstein vacuum field equation $G_{ab}=0$ by taking $G_{00}=0$ and $G_{11}=0$. Then we obtain the following equations :
-\begin{align*}
+\begin{align}
 	e^B+rB'-1&=0\\
 	-e^B+rA'+1&=0
-\end{align*}
+\end{align}
 From which we get :
-\begin{equation*}
+\begin{equation}
 	e^A=e^{-B}=1-\frac{C}{r}
-\end{equation*}
+\end{equation}
 And thus we have the Schwarzschild solution :
-\begin{equation*}
+\begin{equation}
 	ds^2=-(1-\frac{C}{r})dt^2+(1-\frac{C}{r})^{-1}dr^2+r^2d\Omega^2
-\end{equation*}
+\end{equation}
 This method of finding the Schwarzschild solution is work perfectly way but still it is always interesting to find an alternative way to find it.
 \subsection{Elements of the Kerr-Shild for the Schwarzschild case}
 We now want to focus on a metric of the following form $g_{ij}=\eta_{ij}+2H(r)k_ik_j$.
@@ -297,7 +297,7 @@ Which in general is equivalent to :
 	rH'(r)+H(r)=0
 \end{equation}
 This equation is quite nice and can easily be solved as follow :
-\begin{align*}
+\begin{align}
 	rH'(r)+H(r)&=0\\
 	r\frac{d}{dr}H(r)&=-H(r)\\
 	\frac{1}{H(r)}\frac{d}{dr}H(r)&=-\frac{1}{r}\\
@@ -306,7 +306,7 @@ This equation is quite nice and can easily be solved as follow :
 	log(H(r))&=-\log{r}+C \;\\
 	&\text{, with C constant}\\
 	H(r)&=\frac{C}{r}
-\end{align*}
+\end{align}
 Giving us :
 \begin{equation}
 	g_{ij}=\eta_{ij}+\frac{2C}{r}k_ik_j
@@ -314,17 +314,17 @@ Giving us :
 This is the Schwarzschild solution. As it is not so obvious in this form, in the next sub-section, we will put in back in the "classical form".
 \subsection{Back to the classical form of the Schwarzschild solution}
 In order to be able to find the classical Schwarzschild form we should first write the line element of the metric we found explcitly :
-\begin{equation*}
+\begin{equation}
 	ds^2=g_{ij}dX^idX^j
-\end{equation*}
+\end{equation}
 \begin{equation}
 	ds^2=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
 \end{equation}
 In order to find the classical form of the Schwarzschild metric, we will this line element in spherical coordinates $X=\{t,r,\theta,\phi\}$ define as :
-\begin{align*}
+\begin{align}
 	&t=t\\
 	&r^2=x^2+y^2+z^2
-\end{align*}
+\end{align}
 \begin{align}
 	&x=r\sin{\theta}\cos{\phi}\label{coord-transform-1}\\
 	&y=r\sin{\theta}\sin{\phi}\\
@@ -336,11 +336,11 @@ As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and anothe
 \end{equation} 
 Now let's focus on $\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2$.\\
 First we want to write $dx$, $dy$, $dz$ as a linear sum of $dr$, $d\theta$, $d\phi$, so we first :
-\begin{align*}
+\begin{align}
 	&dx=\frac{\partial x}{\partial r}dr+\frac{\partial x}{\partial \theta}d\theta+\frac{\partial x}{\partial \phi}d\phi\\
 	&dy=\frac{\partial y}{\partial r}dr+\frac{\partial y}{\partial \theta}d\theta+\frac{\partial y}{\partial \phi}d\phi\\
 	&dz=\frac{\partial z}{\partial r}dr+\frac{\partial z}{\partial \theta}d\theta+\frac{\partial z}{\partial \phi}d\phi
-\end{align*}
+\end{align}
 Which gives :
 \begin{align}
 	&dx=\sin{\theta}\cos{\phi}dr+r\cos{\theta}\cos{\phi}d\theta-r\sin{\theta}\sin{\phi}d\phi \\
@@ -348,30 +348,30 @@ Which gives :
 	&dz=\cos{\theta}dr-r\sin{\theta}d\theta
 \end{align}
 Back into (\ref{line-elem-schwarz}), looking inside the squared parenthesis, and using also (\ref{coord-transform-1})-(\ref{coord-transform-3}), we can replace as follow :
-\begin{align*}
+\begin{align}
 	-dt+\frac{x}{r}dx+&\frac{y}{r}dy+\frac{z}{r}dz =-dt\\
 	&+\sin{\theta} \cos{\phi} (\sin{\theta} \cos{\phi} dr+r\cos{\theta} \cos{\phi} d\theta -r\sin{\theta} \sin{\phi} d\phi )\\
 	&+\sin{\theta} \sin{\phi} (\sin{\theta} \sin{\phi} dr+r\cos{\theta} \sin{\phi} d\theta +r\sin{\theta} \cos{\phi} d\phi )\\
 	&+\cos{\theta} (\cos{\theta} dr-\sin{\theta} d\theta )
-\end{align*}
+\end{align}
 This equation is quite long but is is simplifiable. In order to see it  we will look at $dr$, $d\theta$, $d\phi$ separatly :
-\begin{align*}
+\begin{align}
 	dr :& \\
 	&\sin^2{\theta}\cos^2{\phi}+\sin{\theta}^2\sin^2{\phi}+\cos^2{\phi}=\sin^2{\theta}+\cos^2{\theta}=1\\
 	d\theta :& \\
 	&r(\sin{\theta}\cos{\theta}\cos^2{\phi}+\sin{\theta}\cos{\theta}\sin^2{\phi}-\cos{\theta}\sin{\phi})=r(\sin{\theta}\cos{\theta}-\sin{\theta}\cos{\theta})=0\\
 	d\phi :& \\
 	&r(-\cos{\phi}\sin{\phi}\sin^2{\theta}+\sin^2{\theta}\cos{\phi}\sin{\phi})=0
-\end{align*}
+\end{align}
 Hence if we replace in (\ref{line-elem-schwarz}) we get :
-\begin{equation*}
+\begin{equation}
 	ds^2=-dt^2+dr^2+r^2d\Omega^2+\frac{2C}{r}(-dt+dr)^2
-\end{equation*}
+\end{equation}
 Expanding :
-\begin{align*}
+\begin{align}
 	&ds^2=-dt^2+dr^2+r^2d\Omega^2+\frac{2C}{r}(dt^2+dr^2-2dtdr)\\
 	&ds^2=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+1)dr^2+r^2d\Omega^2-\frac{4C}{r}dtdr
-\end{align*}
+\end{align}
 We are beginning to see a little better the Schwarzschild as originally found.
 Actually, with an easy coordinate change, $dtarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
 \begin{equation}
@@ -379,9 +379,9 @@ Actually, with an easy coordinate change, $dtarrow dt+dr$, we can get the Edding
 \end{equation}
 This form of the Schwarzschild metric is often used to study travelling light ray.
 Now in order to get the original Schwarzschild we will introduce a bit harder coordinate chande, $dtarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
-\begin{equation*}
+\begin{equation}
 	ds^2=\frac{1}{r(2C-r)}((4C^2-4rC+r^2)dt^2-r^2dr)+r^2d\Omega^2
-\end{equation*}
+\end{equation}
 Factorising, and then dividing :
 \begin{equation}
 	ds^2=-(1-\frac{2C}{r})dt^2+(1-\frac{2C}{r})^{-1}dr^2+r^2d\Omega^2
@@ -401,39 +401,39 @@ They use complicated mathematical notion, and even a good mathematician would re
 Hence it would be interesting to find a simpler way to derive the Kerr solution.
 \subsection{Elements of the Kerr-Shild for the Kerr case}
 Once again we take a metric of the form :
-\begin{equation*}
+\begin{equation}
 	g_{ij}=\eta_{ij}+2H(r,z)k_ik_j
-\end{equation*}
+\end{equation}
 This time we take $H$ to be dependant of $r$ and $z$ to take into account the axial symmetry.
 We consider $r$ such that :
-\begin{equation*}
+\begin{equation}
 	\frac{x^2+y^2}{r^2+a^2}+\frac{z^2}{r^2}=1
-\end{equation*}
+\end{equation}
 With $a$ the source angular momentum per unit mass.
-We notice that as $a \rightarrow 0$ we get the spherical $r$ as before.
+We notice that as $a arrow 0$ we get the spherical $r$ as before.
 And let $k$ be :
-\begin{equation*}
+\begin{equation}
 	k_i=(-1,\frac{r x + a y}{r^2 + a^2},\frac{ry-ax}{r^2+a^2},\frac{z}{r})
-\end{equation*}
-Similarly we took $k_i$ to be a generalisation of the Schwarzschild $k_i$ as when $a \rightarrow 0$ we get the Schwarzschild $k_i$.
+\end{equation}
+Similarly we took $k_i$ to be a generalisation of the Schwarzschild $k_i$ as when $a arrow 0$ we get the Schwarzschild $k_i$.
 \subsection{Einstein vacuum field equation}
 This time finding the Einstein tensor is a bit more challenging.
 The Schwarzschild case computed by hand is already a long calculation and adding a dregree a freedom in the Kerr case complicate even more the calculation.
 Using a computer program like Mathematica, we can find the Einstein tensor components.
 The simplest element of the Einstein tensor after simplifying as much as possible is $G_{00}$ :
-\begin{align*}
+\begin{align}
 	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z H^{(1,1)}(r,z)-a^2 r^2 z^2 H^{(0,2)}(r,z)+a^2 r^2(z^2-r^2) H^{(2,0)}(r,z)\\
 	&-2 H(r,z) (z^2 (a^2z^2+r^4) H^{(0,2)}(r,z)+r ((a^2 z^2+r^4)(2 z H^{(1,1)}(r,z)+r H^{(2,0)}(r,z))\\
 	&+4r^4H^{(1,0)}(r,z)-r^3)+4 r^4 z H^{(0,1)}(r,z))+a^2 z^4H^{(0,2)}(r,z)+2 a^2 r z^3 H^{(1,1)}(r,z)\\
 	&+r^6(-H^{(0,2)}(r,z))+2 r^5 H^{(1,0)}(r,z)+r^4 z^2H^{(0,2)}(r,z)+4 r^4 z H^{(0,1)}(r,z)-4 r^4 H(r,z)^2)
-\end{align*}
+\end{align}
 And even by carefully choosing the best looking term of the Einstein tensor it seems like we won't be able to solve the vacuum field equation $G_{ij}=0$.
 We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
-\begin{align*}
+\begin{align}
 	R_{00}=-\frac{(r^4+a^2z^2)H^{(0,2)}(r,z)+r
 	((a^2+r^2) (2 z H^{(1,1)}(r,z)+r
 	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
-\end{align*}
+\end{align}
 It is a little bit better but still it is a second order PDE that can be quite difficult to solve.
 As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can exptect to complete in a few days.
 It require a bit of research an work.
@@ -441,9 +441,9 @@ The good news is : Once you found a method to simplify the equation and make it 
 Thus we will take some time to study this metric, its history and some useful identity. in the Kerr-Schild is short and easy.
 A good approach, the one that we are going to take, is to equate to zero a combination of parts of the Ricci tensor.
 Indeed if we choose the following combination equal to $0$ :
-\begin{equation*}
+\begin{equation}
 	(r^4+a^2z^2)^3(zR_{00}+rR_{03}+\frac{a^2+r^2}{rx+ay}(zR_{10}+rR_{13}))=0
-\end{equation*}
+\end{equation}
 We obtain the following 1st order PDE :
 \begin{equation}\label{Kerr:equation}
 	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
@@ -453,49 +453,54 @@ We hence finally obtain an equation that is nice looking, and that we can solve.
 I can't say that we can solve the equation without solving it.
 So we will try to solve it.
 Let's have a look at it (\ref{Kerr:equation}) :
-\begin{equation*}
+\begin{equation}
 	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
-\end{equation*}
+\end{equation}
 This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $(r^4-a^2 z^2)$ that may anoy us as they can't be eliminate and they contain a curious term $a^2z^2$.
 In order to get rid of this term we can try to define $P(r,z)$ such that $H(r,z)=P(r,z)(r^4+a^2z^2)^n(r^4-a^2 z^2)^m$ and then find convinient $n$ and $m$.
 Replacing $H(r,z)$ and simplifying, we obtain :
-\begin{align*}
+\begin{align}
    (r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1)))=0\\
    &\text{Dividing by }(r^4-a^2 z^2)^{m-1} (a^2z^2+r^4)^n,\\
    &(r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0\\
-\end{align*}
+\end{align}
 We obtain a nice form as we could eliminate all the $a^2z^2$ terms by choosing $m$ and $n$ such that :
-\begin{equation*}
+\begin{equation}
 	(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=C*(r^8-a^4 z^4)
-\end{equation*}
+\end{equation}
 $C$ being a constant. Which gives us the following system :
-\begin{equation*}
+\begin{equation}
 \begin{cases} -2 m-2 n+1=- (4 m+4 n+1)\\ m-n-1=0 \end{cases}
-\end{equation*}
+\end{equation}
 For which we find that $n=-1$, $m=0$ and our constant $C=-3$, therefore, now we deal with a function $H(r,z)$ of the form $H(r,z)=\frac{P(r,z)}{r^4+a^2z^2}$ and the following PDE :
 \begin{equation}\label{P:Eq}
 	z P^{(0,1)}(r,z)+r P^{(1,0)}(r,z)-3P(r,z)=0
 \end{equation}
 Not taking into account the $z$ dependance of our equation we would have :
-\begin{equation*}
+\begin{equation}
 	P^{(1,0)}(r,z)=3P(r,z)
-\end{equation*}
+\end{equation}
 And hence $P(r,z)=Cr^3$. It would be quite nice to find a function $Q(r,z)$ such that $P(r,z)=Cr^3Q(r,z)$ is still a solution of our equation.
 Thus replacing $P(r,z)$ in (\ref{P:Eq}) would give us :
-\begin{align*}
+\begin{align}
 	r(z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z))=0\\
 	&\text{or}\\
 	z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z)=0
-\end{align*}
+\end{align}
 For which we can find the general solution to be $Q(r,z)=Q(\frac{r}{z})$, as :
-\begin{align*}
+\begin{align}
 	&\frac{\partial Q(\frac{r}{z})}{\partial z}=\frac{-rQ'(\frac{r}{z})}{z^2}\\
 	&\frac{\partial Q(\frac{r}{z})}{\partial r}= \frac{Q'(\frac{r}{z})}{z}
-\end{align*}
+\end{align}
 So far we were able to get a solution of the form $H(r,z)=\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$, which indeed contains the Kerr solution.
 We can do a bit better by replacing this in some components of the Einstein tensor and equate to $0$.
+It goes as follow : let's consider $G_{00}$ and $G_{33}$ replace $H(r,z)$ by $\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$ and simplify, if we eliminate $z$ with $u=r/z$ :
+\begin{align}
+	&G_{00}=2 r^2 u (a^2 (2 r^2-r^2 u^2)+r^4)Q'(u)-(r^2-r^2 u^2) (a^2 r^2u^2+r^4) Q''(u)\\
+	&G_{11}=r u (r^2-r^2 u^2) (a^2 r^2u^2+r^4) Q''(u)+2 (-a^2 r^5 u^2-2r^7 u^2+r^7) Q'(u)
+\end{align}
 
 % ------------------------CONCLUSION------------------------
 \section{Conclusion}
