@@ -170,14 +170,14 @@ Thus we can define the Riemann curvature tensor :
 	defines the Riemann curvature tensor $R_{adi}^b$.
 \end{definition}
 More than the formal definition we would be interested in writing it explicitly :
-\begin{equation}
+\begin{equation} \label{Riemm}
 	R_{adf}^b=\partial_d\Gamma^b_{af}-\partial_a\Gamma^b_{df}+\Gamma^b_{dc}\Gamma^c_{af}-\Gamma^b_{ac}\Gamma^c_{df}
 \end{equation}
 As a rank 4 tensor we can have a look at the traces of the Riemann tensor :
 \begin{definition}
 	\textbf{Ricci tensor and Ricci scalar} :\\
 	The Ricci is defined by :
-	\begin{equation}
+	\begin{equation}\label{Ricc}
 		R_{ab}=R_{acb}^c
 	\end{equation}
 	In dimension n this tensor has $n(n+1)/2$ independant components.\\
@@ -247,6 +247,51 @@ Or :
 	g^{ij}=\eta^{ij}-2Hk^ik^j
 \end{equation}
 We now have a nice formula for $g^{ij}$ that we will implicitly use in the next parts.
+From now on let us consider that $k_i$ is geodesic. This will be useful as it is what we will consider in the two next sections.
+This means that we immediatly obtain the following identity :
+\begin{equation}
+	k^i_{,j}k^j=0
+\end{equation}
+From this identity we are able to find (\ref{Chris}) nice expression for the Christoffel symbols, the Riemann tensor and the Einstein tensor.
+We shall begin with the Christoffel symbols.
+Recall :
+\begin{equation}
+	\Gamma^n_{ij}=\frac{1}{2}g^{nk}(\partial_i g_{jk}+\partial_j g_{ki}-\partial_k g_{ij})
+\end{equation}
+We can replace the metric as $g_{ij}=\eta_{ij}+2Hk_ik_j$ and $g^{ij}=\eta^{ij}-2Hk^ik^j$ :
+\begin{align}
+	\Gamma^n_{ij}&=\frac{1}{2}(\eta^{nk}-2Hk^nk^k)(\partial_i (\eta_{jk}+2Hk_jk_k)+\partial_j (\eta_{ki}+2Hk_kk_i)-\partial_k (\eta_{ij}+2Hk_ik_j))\\
+	&=(\eta^{nk}-2Hk^nk^k)(\partial_i (Hk_jk_k)+\partial_j (Hk_kk_i)-\partial_k (Hk_ik_j))
+\end{align}
+Let us look at :
+\begin{align}
+\begin{split}
+	2H&k^nk^k(\partial_i (Hk_jk_k)+\partial_j (Hk_kk_i)-\partial_k (Hk_ik_j)) =\\
+	&\text{Chain rule :}\\
+	&=2Hk^nk^k(H_{,i}k_jk_k+Hk_{j,i}k_k+Hk_jk_{k,i}\\&\text{ }+H_{,j}k_kk_i+Hk_{k,j}k_i+Hk_kk_{i,j}\\&\text{ }-H_{,k}k_ik_j-Hk_{i,k}k_j-Hk_ik_{j,k})\\
+	&\text{Knowing } k^ik_i=0 :\\
+	&=2Hk^nk^k(Hk_jk_{k,i}+Hk_{k,j}k_i-H_{,k}k_ik_j-Hk_{i,k}k_j-Hk_ik_{j,k})\\
+	&\text{Now considering $k^ik_{i,j}=0$ and $k^ik_{j,i}=0$ :}\\
+	&=-2Hk^nk^kH_{,k}k_ik_j
+\end{split}
+\end{align}
+And then :
+\begin{align}
+\begin{split}
+	\eta^{nk}&(\partial_i (Hk_jk_k)+\partial_j (Hk_kk_i)-\partial_k (Hk_ik_j))=\\
+	&\text{As $\eta^{nk}$ is constant}\\
+	&=\partial_i (H\eta^{nk}k_jk_k)+\partial_j (H\eta^{nk}k_kk_i)-\partial_k (H\eta^{nk}k_ik_j)\\
+	&=\partial_i (Hk_jk^n)+\partial_j (Hk^nk_i)-\partial_k (H\eta^{nk}k_ik_j)
+\end{split}
+\end{align}
+We will know come back to the Christoffel symbols, but first, let us introduce $\mathcal{H}_{ij}=Hk_ik_j$ such that we can write :
+\begin{equation}
+	\Gamma^n_{ij}=\mathcal{H}^n_{j,i}+\mathcal{H}^n_{i,j}-\eta^{nk}\mathcal{H}_{ij,k}-2\mathcal{H}^{nk}H_{,k}k_ik_j
+\end{equation}
+Now let us have a look at the Ricci tensor. From (\ref{Riemm}) and (\ref{Ricc}) :
+\begin{equation}
+	R_{ab}=R^c_{acb}=\partial_c\Gamma^c_{ab}-\partial_a\Gamma^c_{cb}+\Gamma^c_{c\lambda}\Gamma^\lambda_{ab}-\Gamma^c_{a\lambda}\Gamma^\lambda_{cb}
+\end{equation}
 
 % ------------------------DERIVING SCHWARZCHILD DIFFERENTLY------------------------
 \section{Deriving Schwarzschild differently}
