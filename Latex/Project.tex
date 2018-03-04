@@ -524,23 +524,70 @@ For which we find that $n=-1$, $m=0$ and our constant $C=-3$, therefore, now we 
 \begin{equation}\label{P:Eq}
 	z P^{(0,1)}(r,z)+r P^{(1,0)}(r,z)-3P(r,z)=0
 \end{equation}
-Not taking into account the $z$ dependance of our equation we would have :
+We can get rid of the $r$ and $z$ multiplying the function by definining $\hat{r}=\log{r}$ and $\hat{z}=\log{z}$ :
 \begin{equation}
-	P^{(1,0)}(r,z)=3P(r,z)
+\begin{split}
+	d\hat{r}&=\frac{1}{r}dr\\
+	d\hat{z}&=\frac{1}{z}dz\\
+\end{split}
 \end{equation}
-And hence $P(r,z)=Cr^3$. It would be quite nice to find a function $Q(r,z)$ such that $P(r,z)=Cr^3Q(r,z)$ is still a solution of our equation.
-Thus replacing $P(r,z)$ in (\ref{P:Eq}) would give us :
-\begin{align}
-	r(z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z))=0\\
-	&\text{or}\\
-	z Q^{(0,1)}(r,z)&+r Q^{(1,0)}(r,z)=0
-\end{align}
-For which we can find the general solution to be $Q(r,z)=Q(\frac{r}{z})$, as :
-\begin{align}
-	&\frac{\partial Q(\frac{r}{z})}{\partial z}=\frac{-rQ'(\frac{r}{z})}{z^2}\\
-	&\frac{\partial Q(\frac{r}{z})}{\partial r}= \frac{Q'(\frac{r}{z})}{z}
-\end{align}
-So far we were able to get a solution of the form $H(r,z)=\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$, which indeed contains the Kerr solution.
+Such that :
+\begin{equation}
+\begin{split}
+	r\frac{\partial P(r,z)}{\partial r}&=\frac{\partial P(\hat r,\hat z)}{\partial \hat{r}}\\
+	z\frac{\partial P(r,z)}{\partial z}&=\frac{\partial P(\hat r,\hat z)}{\partial \hat{z}}
+\end{split}
+\end{equation}
+And thus :
+\begin{equation}\label{Equ_Hat}
+	\frac{\partial P(\hat r,\hat z)}{\partial \hat{r}}+\frac{\partial P(\hat r,\hat z)}{\partial \hat{z}}-3P(\hat r,\hat z)=0
+\end{equation}
+Which can be solve using the method of characteristics.
+Let us define $u$ and $v$ such that :
+\begin{equation}
+\begin{split}
+	u&=\hat r + \hat z\\
+	v&=\hat r - \hat z
+\end{split}
+\end{equation}
+Which is equivalent to :
+\begin{equation}
+\begin{split}
+	u+v&=2\hat r\\
+	u-v&=2\hat z
+\end{split}
+\end{equation}
+Such that :
+\begin{equation}
+\begin{split}
+	\frac{\partial P}{\partial u}&=\frac{\partial P}{\partial \hat{r}}\frac{\partial \hat r}{\partial u}+\frac{\partial P}{\partial \hat{z}}\frac{\partial \hat z}{\partial u}\\
+	&=\frac{1}{2}(\frac{\partial P}{\partial \hat{r}}+\frac{\partial P}{\partial \hat{z}})
+\end{split}
+\end{equation}
+So that (\ref{Equ_Hat}) becomes :
+\begin{equation}
+	2\frac{\partial P(u,v)}{\partial u}-3P(u,v)=0
+\end{equation}
+Which has the following solution :
+\begin{equation}
+	P(u,v)=e^{\frac{3}{2}u}C(v)
+\end{equation}
+We can go back to our origin coordinates using :
+\begin{equation}
+\begin{split}
+	u&=\log{r} + \log{z}=\log{(rz)}\\
+	v&=\log{r} - \log{z}=\log{\frac{r}{z}}
+\end{split}
+\end{equation}
+We then have :
+\begin{equation}
+	P(r,z)=(rz)^\frac{3}{2}C(\log{\frac{r}{z}})=r^3(\frac{r}{z})^\frac{-3}{2}C(\log{\frac{r}{z}})
+\end{equation}
+So that we can define $\tilde C(\frac{r}{z})=(\frac{r}{z})^\frac{-3}{2}C(\log{\frac{r}{z}})$ and write :
+\begin{equation}
+	P(r,z)=r^3\tilde C(\frac{r}{z})
+\end{equation}
+
 We can do a bit better by replacing this in some components of the Einstein tensor and equate to $0$.
 It goes as follow : let's consider $G_{00}$ and $G_{33}$ replace $H(r,z)$ by $\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$ and simplify, if we eliminate $z$ with $u=r/z$ :
 \begin{align}
