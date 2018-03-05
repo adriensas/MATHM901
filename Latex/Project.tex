@@ -387,7 +387,7 @@ Let us look at :
 	&=2Hk^nk^k(H_{,i}k_jk_k+Hk_{j,i}k_k+Hk_jk_{k,i}\\&\text{ }+H_{,j}k_kk_i+Hk_{k,j}k_i+Hk_kk_{i,j}\\&\text{ }-H_{,k}k_ik_j-Hk_{i,k}k_j-Hk_ik_{j,k})\\
 	&\text{Knowing } k^ik_i=0 :\\
 	&=2Hk^nk^k(Hk_jk_{k,i}+Hk_{k,j}k_i-H_{,k}k_ik_j-Hk_{i,k}k_j-Hk_ik_{j,k})\\
-	&\text{Now considering $k^ik_{i,j}=0$ and $k^ik_{j,i}=0$ :}\\
+	&\text{Now considering $k^ik_{i,j}=0$ and $k^ik_{j,i}=0$ (easy to verify) :}\\
 	&=-2Hk^nk^kH_{,k}k_ik_j
 \end{split}
 \end{align}
@@ -407,6 +407,15 @@ We will know come back to the Christoffel symbols, but first, let us introduce $
 Now let us have a look at the Ricci tensor. From (\ref{Riemm}) and (\ref{Ricc}) :
 \begin{equation}
 	R_{ab}=R^c_{acb}=\partial_c\Gamma^c_{ab}-\partial_a\Gamma^c_{cb}+\Gamma^c_{c\lambda}\Gamma^\lambda_{ab}-\Gamma^c_{a\lambda}\Gamma^\lambda_{cb}
+\end{equation}
+/PROVE IDENTITY OF R/\\
+We then obtain the following form for $R_{ab}$ :
+\begin{equation}
+	R_{ab}=\mathcal{H}^c_{b,ac}+\mathcal{H}^c_{a,bc}-\Box\mathcal{H}_{ab}
+\end{equation}
+Such that we can write the Einstein tensor as :
+\begin{equation}
+	G_{ab}=\mathcal{H}^c_{b,ac}+\mathcal{H}^c_{a,bc}-\Box\mathcal{H}_{ab}-(\frac{1}{2}\eta_{ab}+\mathcal{H}_{ab})R
 \end{equation}
 
 % ------------------------DERIVING SCHWARZCHILD DIFFERENTLY------------------------
