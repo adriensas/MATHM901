@@ -25,7 +25,7 @@ Gower Street, London WC1E 6BT, United Kingdom
 % ------------------------GEOMETRY AND SPACE-TIME------------------------
 \section{Geometry and space-time}
 This project focus on general relativity and require some knowledge on the subject.
-General Relativity is an adequation between gravity and the curvature of the space-time.
+General Relativity is about representing gravity using differential geometry.
 Thus it seems normal to start it with a short introduction to geometry and space-time.
 General relativity uses a special branch of diffential geometry called Riemannian geometry, named after Bernhard Riemann.
 Before talking about curvature of the space-time we must first start to define it.
@@ -186,8 +186,8 @@ Now let's susubstract $\nabla _d \nabla _a V^b$ from this so that we comutator o
 \begin{equation}
 	(\nabla _a \nabla _d - \nabla _d \nabla _a)V^b=(\partial_a \Gamma^b_{di}-\partial_d \Gamma^b_{ai}+\Gamma^b_{dj}\Gamma^j_{ai}-\Gamma^b_{aj}\Gamma^j_{di})V^i
 \end{equation}
-\\/MORE TO SAY/\\
-Thus we can define the Riemann curvature tensor :
+By definition the left-hand side is a tensor, therefore the right-hand side must also be a tensor.
+We will call this tensor the Riemann curvature tensor :
 \begin{definition}
 	\textbf{Riemann curvature tensor} :\\
 	Let $\nabla_a$ be a covariant derivative and let $V^b$ be a vector. The equation
@@ -345,19 +345,19 @@ We shall now start to study a specific metric that will be of great interest in 
 
 % ------------------------KERR-SCHILD TYPE METRIC IN GR------------------------
 \section{Kerr-Schild type metric in GR}
-As the two next section will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Shild Ansatz.
+As the two next section will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Schild Ansatz.
 Thus we will take some time to study this metric, its history and some useful identity.
 \subsection{What is it used for}
 The Kerr-Schild metric is a metric taking the form $g_{ij}=\eta_{ij}+2Hk_ik_j$. It was used by R. P. Kerr and A. Schild, in "A new class of vacuum solutions of the Einstein field equations", in order to study certain vacuum solution of the Einstein field equations.
 It is often use to study spherically symmetric object, axially symmetric rotating object, electromagnetic object, or even to study radiating object as done in [Paper Boehmer/Hogan].
 
 \subsection{Some nice identity and properties}
-As we will work with Kerr-Shild type metric, we will be interest in deriving some identity and poperty of the metric.
+As we will work with Kerr-Schild type metric, we will be interest in deriving some identity and poperty of the metric.
 First let's write it again :
 \begin{equation}
 	g_{ij}=\eta_{ij}+2Hk_ik_j
 \end{equation}
-with $k^i$ null geodesic with regard of $g^{ij}$ and the Minkowski matrice $\eta_{ij}$.
+with $k^i$ null with regard of $g^{ij}$ and the Minkowski matrice $\eta_{ij}$.
 And $H$ an arbitrary function.
 For null geodesics, by definition, we have :
 \begin{equation}
@@ -452,13 +452,13 @@ Such that we can write the Einstein tensor as :
 
 % ------------------------DERIVING SCHWARZCHILD DIFFERENTLY------------------------
 \section{Deriving Schwarzschild differently}
-In this section we will be interested in trying to find Schwarzschild differently using the general Kerr-Shild form :
+In this section we will be interested in trying to find Schwarzschild differently using the general Kerr-Schild form :
 \begin{equation}
 	g_{ij}=\eta_{ij}+2H(r)k_ik_j
 \end{equation}
 The Schwarzschild solution is a really important solutionin general relativity. It was discovered a little more than a month after Einstein had formulated General Relativity and it describes the gravitationnal field outside a static spherical mass.
 This solution can be used as an approximation for slowly rotating spherical astronomical object, like the Earth.
-\subsection{Classical way of finding the Schwarzschild solution}
+\subsection{Standard way of finding the Schwarzschild solution}
 The usual way of finding the Schwarzschild metric usually start by writing the most general symmetric metric in vacuum :
 \begin{equation}
 	ds^2=-e^{A(r)}dt^2+e^{B(r)}dr^2+r^2d\Omega^2
@@ -479,12 +479,12 @@ And thus we have the Schwarzschild solution :
 	ds^2=-(1-\frac{C}{r})dt^2+(1-\frac{C}{r})^{-1}dr^2+r^2d\Omega^2
 \end{equation}
 This method of finding the Schwarzschild solution is work perfectly way but still it is always interesting to find an alternative way to find it.
-\subsection{Elements of the Kerr-Shild for the Schwarzschild case}
+\subsection{Elements of the Kerr-Schild for the Schwarzschild case}
 We now want to focus on a metric of the following form $g_{ij}=\eta_{ij}+2H(r)k_ik_j$.
 First in the Schwarzschild case we consider a spherical object so we consider some $r$ such that $r^2=x^2+y^2+z^2$.
-$\eta_{ij}$ is known as the Minkowski metric defines as $\eta_{ij}=diag(+1,+1,+1,-1)$
+$\eta_{ij}$ is known as the Minkowski metric defines as $\eta_{ij}=\text{diag}(+1,+1,+1,-1)$
 As for the $H$ we guess that it would only depend on $r$.
-We define $k_i=(-1,\frac{x}{r},\frac{y}{r},\frac{z}{r})$, a null geodesic.
+We define $k_i=(-1,\frac{x}{r},\frac{y}{r},\frac{z}{r})$, a null vector.
 We notice that $k_ik^i=0 <=> r^2=x^2+y^2+z^2$.
 We notice that the spatial part of $k_i$ is a radial components but is the metric symmetric?
 \subsection{Einstein vacuum field equation}
@@ -588,12 +588,12 @@ Expanding :
 \end{split}
 \end{align}
 We are beginning to see a little better the Schwarzschild as originally found.
-Actually, with an easy coordinate change, $dtarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
+Actually, with an easy coordinate change, $dt\rightarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
 \begin{equation}
 	ds^2=-(1-\frac{2C}{r})dt^2+2dtdr+r^2d\Omega^2
 \end{equation}
 This form of the Schwarzschild metric is often used to study travelling light ray.
-Now in order to get the original Schwarzschild we will introduce a bit harder coordinate chande, $dtarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
+Now in order to get the original Schwarzschild we will introduce a bit harder coordinate chande, $dt\rightarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
 \begin{equation}
 	ds^2=\frac{1}{r(2C-r)}((4C^2-4rC+r^2)dt^2-r^2dr)+r^2d\Omega^2
 \end{equation}
@@ -608,13 +608,14 @@ As expected.
 Now we want to use the same method we used for the Schwarzschild solution to find the Kerr solution.
 The Kerr metric is another exact solution of the Einstein field equations found in 1963 by Roy P. Kerr.
 It is a generalisation of the Schwarzschild solution, it describes an axially-symmetric rotating object.
-This metric is often used to describe rotating black-holes.\\
-\subsection{Classical way of finding the Kerr solution}
+This metric is often used to describe rotating black-holes. To the best of my knowledge no text book shows a clear derivation of the solution.
+Generally the solution is stated explicitly first and then it is shown that it satisfies the vacuum field equation.
+\subsection{Standars way of finding the Kerr solution}
 Classical way of finding the Kerr metric is a complicated task.
 There don't exist many ressources on this subject, and the few ressources that are available are clearly not accessible to undergraduate student.
 They use complicated mathematical notion, and even a good mathematician would require some time to understand the proof.
 Hence it would be interesting to find a simpler way to derive the Kerr solution.
-\subsection{Elements of the Kerr-Shild for the Kerr case}
+\subsection{Elements of the Kerr-Schild for the Kerr case}
 Once again we take a metric of the form :
 \begin{equation}
 	g_{ij}=\eta_{ij}+2H(r,z)k_ik_j
