@@ -83,7 +83,7 @@ A formal definition of the metric and line element can be written :
 	\end{equation}
 	where the $X^i$ are the coordinates in a patch of $\mathcal{M}$.
 \end{definition}
-\subsection{Geodesics and curvature}
+\subsection{Geodesics}
 To understand the concept of geodesic, we will first look at the 2D flat space case.
 Hence let us consider a manifold $\mathcal{M}$ and a curve $C$ given by $X^i=X^i(\tau)$
 In our 2D flat space, we have $X^i=\{x,y\}$ and a line element of the form $ds^2=dx^2+dy^2$.
@@ -148,8 +148,33 @@ Hence we can define a geodesic :
 	\end{equation}
 	where $\Gamma^n_{ij}$ are given by (\ref{Chris}).
 \end{definition}
+\subsection{Curvature}
 Now let's talk about curvature. In general relativity curvature is described by the Riemann tensor.
-In order to define it we'll first start by computing $\nabla _a \nabla _d V^b$ :
+But before looking at the Riemann tensor, we need to introduce the notion of covariant derivative.
+\begin{definition}
+	\textbf{Covariant derivative :}\\
+	A covariant derivative $\nabla_a$ on a manifold $\mathcal{M}$ is a mapping which takes a type $(p,q)$ tensor to a tensor of type $(p,q+1)$ with the following properties :
+	\begin{itemize}
+		\item For any smooth function $f$ the covariant derivative coincides with the partial derivative :
+		\begin{equation}
+			\nabla_af=\partial_af
+		\end{equation}
+		\item The derivative is linear, this means for all $\alpha,\beta \in \mathbb{R}$ :
+		\begin{equation}
+			\nabla_a(\alpha A^{...}_{...}+\beta B^{...}_{...})=\alpha \nabla_a A^{...}_{...}+\beta\nabla_a B^{...}_{...}
+		\end{equation}
+		Where the dots indicate tensors of arbitrary rank of the same type.
+		\item The derivative satisfies the Leibniz rule (or product rule) :
+		\begin{equation}
+			\nabla_a(A^{...}_{...}B^{...}_{...})=(\nabla_aA^{...}_{...})B^{...}_{...}+A^{...}_{...}(\nabla_aB^{...}_{...})
+		\end{equation}
+		\item The derivative commutes with contraction :
+		\begin{equation}
+			\nabla_aA^{a_1...k...a_m}_{b_1...k...b_n}=\nabla_a(\delta^k_jA^{a_1...j...a_m}_{b_1...k...b_n})
+		\end{equation}
+	\end{itemize}
+\end{definition}
+Now we can introduce the Riemann tensor by as a frist step, computing $\nabla _a \nabla _d V^b$ :
 \begin{align}
 \begin{split}
 	\nabla _a \nabla _d V^b &= \partial_a(\nabla _d V^b)-\Gamma^i_{ad} (\nabla _i V^b)+\Gamma^b_{aj} (\nabla _d V^j)\\
