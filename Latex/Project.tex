@@ -151,9 +151,11 @@ Hence we can define a geodesic :
 Now let's talk about curvature. In general relativity curvature is described by the Riemann tensor.
 In order to define it we'll first start by computing $\nabla _a \nabla _d V^b$ :
 \begin{align}
+\begin{split}
 	\nabla _a \nabla _d V^b &= \partial_a(\nabla _d V^b)-\Gamma^i_{ad} (\nabla _i V^b)+\Gamma^b_{aj} (\nabla _d V^j)\\
 	&=\partial_a\partial_d V^b+ \partial_a \Gamma^b_{di}V^i+ \Gamma^b_{di}\partial_a V^i - \Gamma^i_{ad}\partial_i V^b
 	-\Gamma^i_{ad}\Gamma^b_{ij}V^j+\Gamma^b_{aj}\partial_d V^j-\Gamma^b_{aj}\Gamma^j_{di}V^i
+\end{split}
 \end{align}
 Now let's susubstract $\nabla _d \nabla _a V^b$ from this so that we comutator of two covariant derivatives and we obtain :
 \begin{equation}
@@ -348,19 +350,21 @@ Such that we thus have the following :
 This will be useful to find other properties.
 We can now try to derive a nice formula for the inverse of $g_{ij}$.
 We begin with the definition of the inverse of a matrix :
-\begin{gather*}
-	g^{jk}g_{ij}=\delta^k_i \\
-	\text{We then explicitly write } g_{ij},\\
-	g^{jk}(\eta_{ij}+2Hk_ik_j)=\delta^k_i\\
-	\text{and expanding,}\\
-	g^{jk}\eta_{ij}+2Hg^{jk}k_ik_j)=\delta^k_i\\
-	\text{now we replace using (\ref{I:kupper})}\\
-	g^{jk}\eta_{ij}+2Hk_ik^k)=\delta^k_i\\
-	\text{we multiply both sides by }\eta^{il},\\
-	g^{jk}\delta^l_j+2Hk^lk^k=\eta^{il}\delta^k_i\\
-	\text{then we replace $j=l$ and $i=k$}\\
-	g^{kl}=\eta^{kl}-2Hk^kk^l
-\end{gather*}
+\begin{equation}
+\begin{split}
+	&g^{jk}g_{ij}=\delta^k_i \\
+	&\text{We then explicitly write } g_{ij},\\
+	&g^{jk}(\eta_{ij}+2Hk_ik_j)=\delta^k_i\\
+	&\text{and expanding,}\\
+	&g^{jk}\eta_{ij}+2Hg^{jk}k_ik_j)=\delta^k_i\\
+	&\text{now we replace using (\ref{I:kupper})}\\
+	&g^{jk}\eta_{ij}+2Hk_ik^k)=\delta^k_i\\
+	&\text{we multiply both sides by }\eta^{il},\\
+	&g^{jk}\delta^l_j+2Hk^lk^k=\eta^{il}\delta^k_i\\
+	&\text{then we replace $j=l$ and $i=k$}\\
+	&g^{kl}=\eta^{kl}-2Hk^kk^l
+\end{split}
+\end{equation}
 Or :
 \begin{equation}
 	g^{ij}=\eta^{ij}-2Hk^ik^j
@@ -436,8 +440,10 @@ The usual way of finding the Schwarzschild metric usually start by writing the m
 \end{equation}
 Then we compute the Einstein tensor, and we solve the Einstein vacuum field equation $G_{ab}=0$ by taking $G_{00}=0$ and $G_{11}=0$. Then we obtain the following equations :
 \begin{align}
+\begin{split}
 	e^B+rB'-1&=0\\
 	-e^B+rA'+1&=0
+\end{split}
 \end{align}
 From which we get :
 \begin{equation}
@@ -472,6 +478,7 @@ Which in general is equivalent to :
 \end{equation}
 This equation is quite nice and can easily be solved as follow :
 \begin{align}
+\begin{split}
 	rH'(r)+H(r)&=0\\
 	r\frac{d}{dr}H(r)&=-H(r)\\
 	\frac{1}{H(r)}\frac{d}{dr}H(r)&=-\frac{1}{r}\\
@@ -480,6 +487,7 @@ This equation is quite nice and can easily be solved as follow :
 	log(H(r))&=-\log{r}+C \;\\
 	&\text{, with C constant}\\
 	H(r)&=\frac{C}{r}
+\end{split}
 \end{align}
 Giving us :
 \begin{equation}
@@ -497,9 +505,7 @@ In order to be able to find the classical Schwarzschild form we should first wri
 In order to find the classical form of the Schwarzschild metric, we will this line element in spherical coordinates $X=\{t,r,\theta,\phi\}$ define as :
 \begin{align}
 	&t=t\\
-	&r^2=x^2+y^2+z^2
-\end{align}
-\begin{align}
+	&r^2=x^2+y^2+z^2\\
 	&x=r\sin{\theta}\cos{\phi}\label{coord-transform-1}\\
 	&y=r\sin{\theta}\sin{\phi}\\
 	&z=r\cos{\theta}\label{coord-transform-3}
@@ -511,31 +517,39 @@ As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and anothe
 Now let's focus on $\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2$.\\
 First we want to write $dx$, $dy$, $dz$ as a linear sum of $dr$, $d\theta$, $d\phi$, so we first :
 \begin{align}
+\begin{split}
 	&dx=\frac{\partial x}{\partial r}dr+\frac{\partial x}{\partial \theta}d\theta+\frac{\partial x}{\partial \phi}d\phi\\
 	&dy=\frac{\partial y}{\partial r}dr+\frac{\partial y}{\partial \theta}d\theta+\frac{\partial y}{\partial \phi}d\phi\\
 	&dz=\frac{\partial z}{\partial r}dr+\frac{\partial z}{\partial \theta}d\theta+\frac{\partial z}{\partial \phi}d\phi
+\end{split}
 \end{align}
 Which gives :
 \begin{align}
+\begin{split}
 	&dx=\sin{\theta}\cos{\phi}dr+r\cos{\theta}\cos{\phi}d\theta-r\sin{\theta}\sin{\phi}d\phi \\
 	&dy=\sin{\theta}\sin{\phi}dr+r\cos{\theta}\sin{\phi}d\theta+r\sin{\theta}\cos{\phi}d\phi \\
 	&dz=\cos{\theta}dr-r\sin{\theta}d\theta
+\end{split}
 \end{align}
 Back into (\ref{line-elem-schwarz}), looking inside the squared parenthesis, and using also (\ref{coord-transform-1})-(\ref{coord-transform-3}), we can replace as follow :
 \begin{align}
+\begin{split}
 	-dt+\frac{x}{r}dx+&\frac{y}{r}dy+\frac{z}{r}dz =-dt\\
 	&+\sin{\theta} \cos{\phi} (\sin{\theta} \cos{\phi} dr+r\cos{\theta} \cos{\phi} d\theta -r\sin{\theta} \sin{\phi} d\phi )\\
 	&+\sin{\theta} \sin{\phi} (\sin{\theta} \sin{\phi} dr+r\cos{\theta} \sin{\phi} d\theta +r\sin{\theta} \cos{\phi} d\phi )\\
 	&+\cos{\theta} (\cos{\theta} dr-\sin{\theta} d\theta )
+\end{split}
 \end{align}
 This equation is quite long but is is simplifiable. In order to see it  we will look at $dr$, $d\theta$, $d\phi$ separatly :
 \begin{align}
+\begin{split}
 	dr :& \\
 	&\sin^2{\theta}\cos^2{\phi}+\sin{\theta}^2\sin^2{\phi}+\cos^2{\phi}=\sin^2{\theta}+\cos^2{\theta}=1\\
 	d\theta :& \\
 	&r(\sin{\theta}\cos{\theta}\cos^2{\phi}+\sin{\theta}\cos{\theta}\sin^2{\phi}-\cos{\theta}\sin{\phi})=r(\sin{\theta}\cos{\theta}-\sin{\theta}\cos{\theta})=0\\
 	d\phi :& \\
 	&r(-\cos{\phi}\sin{\phi}\sin^2{\theta}+\sin^2{\theta}\cos{\phi}\sin{\phi})=0
+\end{split}
 \end{align}
 Hence if we replace in (\ref{line-elem-schwarz}) we get :
 \begin{equation}
@@ -543,8 +557,10 @@ Hence if we replace in (\ref{line-elem-schwarz}) we get :
 \end{equation}
 Expanding :
 \begin{align}
+\begin{split}
 	&ds^2=-dt^2+dr^2+r^2d\Omega^2+\frac{2C}{r}(dt^2+dr^2-2dtdr)\\
 	&ds^2=(\frac{2C}{r}-1)dt^2+(\frac{2C}{r}+1)dr^2+r^2d\Omega^2-\frac{4C}{r}dtdr
+\end{split}
 \end{align}
 We are beginning to see a little better the Schwarzschild as originally found.
 Actually, with an easy coordinate change, $dtarrow dt+dr$, we can get the Eddington - Finkelstein form of the Schwarzschild metric :
@@ -596,17 +612,21 @@ The Schwarzschild case computed by hand is already a long calculation and adding
 Using a computer program like Mathematica, we can find the Einstein tensor components.
 The simplest element of the Einstein tensor after simplifying as much as possible is $G_{00}$ :
 \begin{align}
+\begin{split}
 	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z H^{(1,1)}(r,z)-a^2 r^2 z^2 H^{(0,2)}(r,z)+a^2 r^2(z^2-r^2) H^{(2,0)}(r,z)\\
 	&-2 H(r,z) (z^2 (a^2z^2+r^4) H^{(0,2)}(r,z)+r ((a^2 z^2+r^4)(2 z H^{(1,1)}(r,z)+r H^{(2,0)}(r,z))\\
 	&+4r^4H^{(1,0)}(r,z)-r^3)+4 r^4 z H^{(0,1)}(r,z))+a^2 z^4H^{(0,2)}(r,z)+2 a^2 r z^3 H^{(1,1)}(r,z)\\
 	&+r^6(-H^{(0,2)}(r,z))+2 r^5 H^{(1,0)}(r,z)+r^4 z^2H^{(0,2)}(r,z)+4 r^4 z H^{(0,1)}(r,z)-4 r^4 H(r,z)^2)
+\end{split}
 \end{align}
 And even by carefully choosing the best looking term of the Einstein tensor it seems like we won't be able to solve the vacuum field equation $G_{ij}=0$.
 We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
 \begin{align}
+\begin{split}
 	R_{00}=-\frac{(r^4+a^2z^2)H^{(0,2)}(r,z)+r
 	((a^2+r^2) (2 z H^{(1,1)}(r,z)+r
 	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
+\end{split}
 \end{align}
 It is a little bit better but still it is a second order PDE that can be quite difficult to solve.
 As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can expect to complete in a few days.
@@ -634,11 +654,13 @@ This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $
 In order to get rid of this term we can try to define $P(r,z)$ such that $H(r,z)=P(r,z)(r^4+a^2z^2)^n(r^4-a^2 z^2)^m$ and then find convinient $n$ and $m$.
 Replacing $H(r,z)$ and simplifying, we obtain :
 \begin{align}
-   (r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
+\begin{split}
+	(r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1)))=0\\
    &\text{Dividing by }(r^4-a^2 z^2)^{m-1} (a^2z^2+r^4)^n,\\
    &(r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
-   &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0\\
+   &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0
+\end{split}
 \end{align}
 We obtain a nice form as we could eliminate all the $a^2z^2$ terms by choosing $m$ and $n$ such that :
 \begin{equation}
