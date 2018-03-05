@@ -44,7 +44,7 @@ More formaly :
 		\item For each $\alpha$ the coordinates $\{ X^i_{(\alpha)}\}$ are bijective functions $X^i_{(\alpha)}:\Omega_\alpha \mapsto O_\alpha \subset \mathbb{R}^n$
 		where the $O_\alpha$ are also open.
 		\item If any $U_\alpha$ and $U_\beta$ overlap, then the coordinates $\{ X^i_{(\alpha)}\}$ and $\{ X^i_{(\beta)}\}$
-		are related by a coordinarte transformation on the intersection $U_\alpha \cap U_\beta$.
+		are related by a  transformation on the intersection $U_\alpha \cap U_\beta$.
 	\end{enumerate}
 \end{definition}
 Now we have define a space on which we can define scalars vector and tensor.
@@ -108,7 +108,7 @@ And the Euler-Lagrange are given by :
 \begin{equation}\label{Eul_Lag}
 	\frac{\partial L}{\partial X^k}=\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}
 \end{equation}
-Let us begin with the left hand side of the (\ref{Eul_Lag}), and replace :
+Let us begin with the hand side of the (\ref{Eul_Lag}), and replace :
 \begin{equation}
 	\frac{\partial L}{\partial X^k}=\frac{1}{2L}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j
 \end{equation}
@@ -241,7 +241,7 @@ Therefore we may have :
 \begin{equation}
 	\frac{2GM}{c^2r} \longleftrightarrow g_{ij}
 \end{equation}
-But if we look at the limit $M\rightarrow 0$ we would expect to find an empty space, with a Minkowski space.
+But if we look at the limit $Marrow 0$ we would expect to find an empty space, with a Minkowski space.
 We can thus improve the identification :
 \begin{equation}
 	1\pm\frac{2GM}{c^2r} \longleftrightarrow g_{ij}
@@ -289,8 +289,8 @@ To find the general Einstein equation we recall (\ref{conserv}) ($\nabla_j T^{ij
 \begin{equation}
 	\Delta\phi_N=4\pi G\rho
 \end{equation}
-It would thus make sense that it will appear on the right hand side of the Einstein field equations.
-We can also deduce that we need more than the Ricci tensor on the left hand side as $\nabla_j R^{ij}\ne0$.
+It would thus make sense that it will appear on the hand side of the Einstein field equations.
+We can also deduce that we need more than the Ricci tensor on the hand side as $\nabla_j R^{ij}\ne0$.
 However, it can be shown that $\nabla_j G^{ij}=0$.
 Hence we can write the Einstein field equations :
 \begin{equation}\label{ExEinst}
@@ -699,17 +699,46 @@ We then have :
 \begin{equation}
 	P(r,z)=(rz)^\frac{3}{2}C(\log{\frac{r}{z}})=r^3(\frac{r}{z})^\frac{-3}{2}C(\log{\frac{r}{z}})
 \end{equation}
-So that we can define $\tilde C(\frac{r}{z})=(\frac{r}{z})^\frac{-3}{2}C(\log{\frac{r}{z}})$ and write :
+So that we can define $\tilde C(\frac{r}{z})=(\frac{r}{z})^\frac{3}{2}C(\log{(\frac{z}{r})^-1})$ and write :
 \begin{equation}
-	P(r,z)=r^3\tilde C(\frac{r}{z})
+	P(r,z)=r^3\tilde C(\frac{z}{r})
 \end{equation}
-
-We can do a bit better by replacing this in some components of the Einstein tensor and equate to $0$.
-It goes as follow : let's consider $G_{00}$ and $G_{33}$ replace $H(r,z)$ by $\frac{Cr^3Q(\frac{r}{z})}{r^4+a^2z^2}$ and simplify, if we eliminate $z$ with $u=r/z$ :
-\begin{align}
-	&G_{00}=2 r^2 u (a^2 (2 r^2-r^2 u^2)+r^4)Q'(u)-(r^2-r^2 u^2) (a^2 r^2u^2+r^4) Q''(u)\\
-	&G_{11}=r u (r^2-r^2 u^2) (a^2 r^2u^2+r^4) Q''(u)+2 (-a^2 r^5 u^2-2r^7 u^2+r^7) Q'(u)
-\end{align}
+At this point we have a solution of the form :
+\begin{equation}
+	H(r,z)=\frac{r^3\tilde C(\frac{z}{r})}{r^4+a^2z^2}
+\end{equation}
+Now choosing $u=z/r$ so that we have $H(r,u)=\frac{r^3\tilde C(u)}{r^4+a^2r^2u^2}$
+We can find $\tilde C(u)$ by equating a linear combination of components of the Einstein tensor to zero (Einstein vacuum field equation).
+Taking a look at $G_{00}$ and $G_{33}$ with our coordinates $(r,u)$ and solution $H(r,u)=\frac{r^3\tilde C(u)}{r^4+a^2r^2u^2}$ :
+\begin{equation}
+\begin{split}
+	G_{00}&=\frac{r^3 (2 r^2 u (a^2 (2 r^2-r^2
+	u^2)+r^4) \tilde C'(u)-(r^2-r^2
+	u^2) (a^2 r^2 u^2+r^4)
+	\tilde C''(u))}{(a^2 r^2
+	u^2+r^4)^3}\\
+	G_{33}&=\frac{r^2 u ((2 a^2 r^5
+   u^2+4 r^7 u^2-2 r^7)\tilde C'(u)+r u (r^2 u^2-r^2) (a^2
+   r^2 u^2+r^4) \tilde C''(u)
+   )}{(a^2 r^2 u^2+r^4)^3}
+\end{split}
+\end{equation}
+Hence we can use the following combination :
+\begin{equation}
+\begin{split}
+	&\frac{ru(a^2 r^2 u^2+r^4)^3}{r^3}G_{00}+\frac{(a^2 r^2 u^2+r^4)^3}{r^2u}G_{33}=0\\
+	&-2 r^5 (u^2-1) (a^2 u^2+r^2)\tilde C'(u)=0
+\end{split}
+\end{equation}
+Which is, without loss of generality, equivalent to :
+\begin{equation}
+	\tilde C'(u)=0
+\end{equation}
+So that $\tilde C(u)=\tilde C$ constant. Hence we finally have the complete solution :
+\begin{equation}
+	H(r,z)=\frac{r^3\tilde C}{r^4+a^2z^2}
+\end{equation}
+Which is what we expected, the Kerr solution.
 
 % ------------------------CONCLUSION------------------------
 \section{Conclusion}
