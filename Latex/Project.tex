@@ -143,7 +143,7 @@ Hence we can define a geodesic :
 \begin{definition}
 	\textbf{Geodesics} :\\
 	A curve $C$ given by $X^i(\tau)$ with affine parameter $\tau$ is called a geodesic if it satisfies the equation
-	\begin{equation}
+	\begin{equation}\label{Geodesic}
 		\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
 	\end{equation}
 	where $\Gamma^n_{ij}$ are given by (\ref{Chris}).
@@ -198,7 +198,123 @@ But first, let's define the Einstein tensor :
 	\end{equation}
 	It is a symmetric rank-2 tensor. In n dimensions this tensor has $n(n+1)/2$ independant components, so in 4 dimensions it has 10 independant components.
 \end{definition}
-But we will come back to that later
+We will also need to introduce the stress–energy–momentum tensor.
+It is a tensor quantity that describes the density and flux of energy and momentum in spacetime.
+It is a generalisation of the stress tensor in classical physic.
+We write if $T^{ij}$.
+And we will give it the following properties :
+\begin{align}
+	&T^{ij}=T^{ji}\\
+	&\nabla_j T^{ij}=0\label{conserv}
+\end{align}
+The first equation describe the symmetry of the object $T^{ij}$ while the second one have a physical meaning : it is an energy and momentum conservation equation.\\
+Let us have a look at the Newton 2nd law :
+\begin{equation}
+	\frac{d^2\boldsymbol{x}}{dt^2}=\boldsymbol{g}
+\end{equation}
+And compare it to the geodesic equation (\ref{Geodesic}) :
+\begin{equation}
+	\frac{d^2x^n}{d\lambda^2}=-\Gamma^n_{ij}\frac{dx^i}{d\lambda}\frac{dx^j}{d\lambda}
+\end{equation}
+As we want to describe gravity using diffential geometry, we should be able to identify the Christoffel symbols in the geodesic equation with the force per uni mass in Newton 2nd law.
+Looking at the physical unit, $\lambda$ is dimensionless, $[\boldsymbol{g}]=m/s^2$ and we deduce that $[\Gamma]=1/m$.
+Hence we have :
+\begin{equation}
+	\frac{\boldsymbol{g}}{\Gamma}=(\frac{m}{s})^2
+\end{equation}
+Which correspond to speed square. If we want to find an equivalence between $\Gamma$ and $\boldsymbol{g}$ we then need to bring a physical constant in unit of speed squared.
+We immediatly think about the speed of light and thus we identify :
+\begin{equation}
+	\frac{1}{c^2} \boldsymbol{g} \longleftrightarrow \Gamma^n_{ij}
+\end{equation}
+The Christoffel symbol components depend on the first derivative of the metric $\partial_kg_{ij}$ multiply by a factor of $\frac{1}{2}$.
+And in Newtonian gravity $\boldsymbol{g}=-\text{grad}\phi_N$, which means that the field depends on the derivatives of the gravitationnal potential.
+We thus find that :
+\begin{equation}
+	\frac{1}{c^2}\phi_N \longleftrightarrow \frac{1}{2}g_{ij}
+\end{equation}
+In Newtonian gravity, for a spherically symmetric, static gravitationnal field we have :
+\begin{equation}
+	\phi_N=\frac{-GM}{r}
+\end{equation}
+Therefore we may have :
+\begin{equation}
+	\frac{2GM}{c^2r} \longleftrightarrow g_{ij}
+\end{equation}
+But if we look at the limit $M\rightarrow 0$ we would expect to find an empty space, with a Minkowski space.
+We can thus improve the identification :
+\begin{equation}
+	1\pm\frac{2GM}{c^2r} \longleftrightarrow g_{ij}
+\end{equation}
+We also can do the same type of identification between curvature and the Poisson equation.
+Recalling the geodesic deviation equation (\ref{Dev_Equ}):
+\begin{equation}\label{Dev_Equ2}
+	\frac{D^2N^a}{D\lambda^2}=-(R_{jic}^aT^jT^c)N^i
+\end{equation}
+Let us find a similar equation in Newtonian mechanic.
+We begin with an Euclidian space $X^\alpha={x,y,z}$ and a family of curves $X^\alpha(t,s)$ where $t$ is the time along the curve and $s$ the curves.
+$T^\alpha=dX^\alpha/dt$ is the tangent vector to any of these curve for a fixed $s_0$.
+$N^\alpha=dX^\alpha/ds$ is the vector connecting infinitesimal close curves at fixed time.
+$\frac{\partial}{\partial t}N^\alpha$ can be interpret as the relative velocity between nearby curves, such that :
+\begin{equation}
+	\frac{\partial}{\partial t}N^\alpha=\frac{\partial}{\partial s}V^\alpha
+\end{equation}
+And thus we have the following acceleration :
+\begin{equation}
+\begin{split}
+	\frac{\partial^2}{\partial t^2}N^\alpha&=\frac{\partial}{\partial s}\frac{\partial}{\partial t}V^\alpha \\
+	&=\frac{\partial}{\partial s}(\frac{\partial^2}{\partial t^2}X^\alpha)=-\frac{\partial}{\partial s}(\partial^\alpha \phi)
+\end{split}
+\end{equation}
+Then applying the chain rule :
+\begin{equation}
+\begin{split}
+	\frac{\partial^2}{\partial t^2}N^\alpha&=-\frac{\partial}{\partial s}(\frac{\partial}{\partial X^\alpha}\phi)\\
+	&=-\frac{\partial^2\phi}{\partial X^\alpha\partial X^\beta}\frac{\partial X^\beta}{\partial s}\\
+	&=-\frac{\partial^2\phi}{\partial X^\alpha\partial X^\beta}N^\beta\\
+	&=-(\partial^\alpha \partial^\beta \phi)N^\beta
+\end{split}
+\end{equation}
+Looking back at (\ref{Dev_Equ2}) we identify :
+\begin{equation}
+	R_{jic}^aT^jT^c\longleftrightarrow \partial^a \partial_i \phi
+\end{equation}
+But $R_{jic}^iT^jT^c=R_{jc}T^jT^c$, thus :
+\begin{equation}
+	R_{jc}T^jT^c\longleftrightarrow \partial^i \partial_i \phi
+\end{equation}
+As the Riemann tensor contains the second derivative of the metric tensor it is consistent with our previous identifications.
+We note that in the absence of gravity field we have $R_{jc}T^jT^c=0$ or $R_{jc}=0$ which is consistent with the Einstein vacuum field equation as we will see in a bit.\\
+To find the general Einstein equation we recall (\ref{conserv}) ($\nabla_j T^{ij}=0$) and look at the Poisson's equation for the gravitationnal field :
+\begin{equation}
+	\Delta\phi_N=4\pi G\rho
+\end{equation}
+It would thus make sense that it will appear on the right hand side of the Einstein field equations.
+We can also deduce that we need more than the Ricci tensor on the left hand side as $\nabla_j R^{ij}\ne0$.
+However, it can be shown that $\nabla_j G^{ij}=0$.
+Hence we can write the Einstein field equations :
+\begin{equation}\label{ExEinst}
+	R_{ij}-\frac{1}{2}Rg_{ij}=\kappa T_{ij}
+\end{equation}
+Or obviously :
+\begin{equation}
+	G_{ij}=\kappa T_{ij}
+\end{equation}
+And in vacuum we have $T_{ij}=0$ so that the Einstein vacuum field equations are :
+\begin{equation}
+	G_{ij}=0
+\end{equation}
+We can obtain an alternative form of the Einstein field equations multiplying both sides of (\ref{ExEinst}) by $g^{ij}$, we obtain that $-R=\kappa T$.
+Replacing R in (\ref{ExEinst}) :
+\begin{equation}
+	R_{ij}=\kappa(T_{ij}-\frac{1}{2}Rg_{ij})
+\end{equation}
+Such that in vacuum :
+\begin{equation}
+	R_{ij}=0
+\end{equation}
+\\We know have all the basic notions that we will need in the next sections.
+We shall now start to study a specific metric that will be of great interest in the rest of this project.
 
 % ------------------------KERR-SCHILD TYPE METRIC IN GR------------------------
 \section{Kerr-Schild type metric in GR}
@@ -432,7 +548,7 @@ Factorising, and then dividing :
 \begin{equation}
 	ds^2=-(1-\frac{2C}{r})dt^2+(1-\frac{2C}{r})^{-1}dr^2+r^2d\Omega^2
 \end{equation}
-As exptected.
+As expected.
 
 % ------------------------DERIVING KERR DIFFERENTLY------------------------
 \section{Deriving Kerr differently}
@@ -481,7 +597,7 @@ We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
 	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
 \end{align}
 It is a little bit better but still it is a second order PDE that can be quite difficult to solve.
-As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can exptect to complete in a few days.
+As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can expect to complete in a few days.
 It require a bit of research an work.
 The good news is : Once you found a method to simplify the equation and make it solvable, the proof that you can find the Kerr metric using an Ansatz.
 Thus we will take some time to study this metric, its history and some useful identity. in the Kerr-Schild is short and easy.
