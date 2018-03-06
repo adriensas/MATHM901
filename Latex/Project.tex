@@ -4,7 +4,7 @@
 	\usepackage{amssymb}
 
 \theoremstyle{definition}
-\title{Kerr and Schwarzschild spacetimes derived differently}
+\title{Kerr and Schwarzschild spacetime derived differently}
 \author{Adrien Sasportes,\\
 Department of Mathematics, University College London, \\
 Gower Street, London WC1E 6BT, United Kingdom,
@@ -21,6 +21,24 @@ Gower Street, London WC1E 6BT, United Kingdom
 
 % ------------------------INTRODUCTION------------------------
 \section{Introduction}
+Since Einstein formulated its field equations, many solution have been found.
+The first to be discovered was the Schwarzschild solution.
+This solution is static and spherically symmetric and is considered as one of the most important.
+Another famous solution has been discovered by R.P Kerr in 1963, the Kerr Solution describes the geometry of an empty spacetime around an axially symmetric rotating massive object.
+While there is a lot of ressources on how to get the Schwarzschild solution, finding ways to obtain the Kerr solution is a bit more challenging.
+Moreover the proof of the Schwarzschild solution are quite accessible to an undergraduate student, while, when found, the proofs of the Kerr Solution require a deeper knowledge that require complex mathematics notions.
+Thus the goal of this project will be to derive both of this solution using the well known Kerr-Schild Ansatz.
+This will provide us a nice and similar proof, that should be accessible to undergraduate student.
+Moreover, the Kerr-Schild metric take the interesting subsequent form 
+\begin{equation*}
+	g_{ij}=\eta_{ij}+2Hk_ik_j
+\end{equation*}
+We can see that it is a linear combination of the Minkowski metric and another element.
+This can gives us goo insight on the form of the mertic.
+Our study will articulate as follow : we will first briefly introduce the basis of diffential geometry and generla relativity useful to our work,
+then we will briefly talk about the Kerr-Shild type metric and introduce identity that we will use after, next we will derive the Schwarzschild solution using the Kerr-Shild Ansatz,
+and finally we will derive the Kerr solution using the same Ansatz.
+
 
 % ------------------------GEOMETRY AND SPACE-TIME------------------------
 \section{Geometry and space-time}
@@ -353,7 +371,7 @@ The Kerr-Schild metric is a metric taking the form $g_{ij}=\eta_{ij}+2Hk_ik_j$.
 Where $H$ is an arbitrary function, $\eta_{ij}$ represent the Minkowski space, and $k$ a null vector.
 This form is interesting as it represent a modification of the Minkowski space and thus proving that you can write a metric under this form means that it is a linear superposition of the flat spacetime metric and a squared null vector field.
 It was used by R. P. Kerr and A. Schild, in "A new class of vacuum solutions of the Einstein field equations", in order to study certain vacuum solution of the Einstein field equations.
-It is often use to study spherically symmetric mass, axially symmetric rotating mass, electromagnetic fields, or even to study radiating object as done in [Paper Boehmer/Hogan].
+It is often use to study spherically symmetric mass, axially symmetric rotating mass, charged mass, or even to study radiating object as done in [Paper Boehmer/Hogan].
 
 \subsection{Some nice identity and properties}
 As we will work with Kerr-Schild type metric, we will be interested in deriving some identities and poperties of this metric.
