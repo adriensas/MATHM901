@@ -639,25 +639,25 @@ Using a computer program like Mathematica, we can find the Einstein tensor compo
 The simplest element of the Einstein tensor after simplifying as much as possible is $G_{00}$ :
 \begin{align}
 \begin{split}
-	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z H^{(1,1)}(r,z)-a^2 r^2 z^2 H^{(0,2)}(r,z)+a^2 r^2(z^2-r^2) H^{(2,0)}(r,z)\\
-	&-2 H(r,z) (z^2 (a^2z^2+r^4) H^{(0,2)}(r,z)+r ((a^2 z^2+r^4)(2 z H^{(1,1)}(r,z)+r H^{(2,0)}(r,z))\\
-	&+4r^4H^{(1,0)}(r,z)-r^3)+4 r^4 z H^{(0,1)}(r,z))+a^2 z^4H^{(0,2)}(r,z)+2 a^2 r z^3 H^{(1,1)}(r,z)\\
-	&+r^6(-H^{(0,2)}(r,z))+2 r^5 H^{(1,0)}(r,z)+r^4 z^2H^{(0,2)}(r,z)+4 r^4 z H^{(0,1)}(r,z)-4 r^4 H(r,z)^2)
+	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z \frac{\partial^2}{\partial r\partial z}H(r,z)-a^2 r^2 z^2 \frac{\partial^2}{\partial z^2}H(r,z)+a^2 r^2(z^2-r^2) \frac{\partial^2}{\partial r^2}H(r,z)\\
+	&-2 H(r,z) (z^2 (a^2z^2+r^4) \frac{\partial^2}{\partial z^2}H(r,z)+r ((a^2 z^2+r^4)(2 z \frac{\partial^2}{\partial r\partial z}H(r,z)+r \frac{\partial^2}{\partial r^2}H(r,z))\\
+	&+4r^4\frac{\partial}{\partial r}H(r,z)-r^3)+4 r^4 z \frac{\partial}{\partial z}H(r,z))+a^2 z^4\frac{\partial^2}{\partial z^2}H(r,z)+2 a^2 r z^3 \frac{\partial^2}{\partial r\partial z}H(r,z)\\
+	&+r^6(-\frac{\partial^2}{\partial z^2}H(r,z))+2 r^5 \frac{\partial}{\partial r}H(r,z)+r^4 z^2\frac{\partial^2}{\partial z^2}H(r,z)+4 r^4 z \frac{\partial}{\partial z}H(r,z)-4 r^4 H(r,z)^2)
 \end{split}
 \end{align}
 And even by carefully choosing the best looking term of the Einstein tensor it seems like we won't be able to solve the vacuum field equation $G_{ij}=0$.
 We can do a little bit a better by looking at the Ricci tensor $R_{00}$ :
 \begin{align}
 \begin{split}
-	R_{00}=-\frac{(r^4+a^2z^2)H^{(0,2)}(r,z)+r
-	((a^2+r^2) (2 z H^{(1,1)}(r,z)+r
-	H^{(2,0)}(r,z))+2 r^2 H^{(1,0)}(r,z))}{a^2 z^2+r^4}
+	R_{00}=-\frac{(r^4+a^2z^2)\frac{\partial^2}{\partial z^2}H(r,z)+r
+	((a^2+r^2) (2 z \frac{\partial^2}{\partial r\partial z}H(r,z)+r
+	\frac{\partial^2}{\partial r^2}H(r,z))+2 r^2 \frac{\partial}{\partial r}H(r,z))}{a^2 z^2+r^4}
 \end{split}
 \end{align}
 It is a little bit better but still it is a second order PDE that can be quite difficult to solve.
-As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not an easy task that you can expect to complete in a few days.
-It require a bit of research an work.
-The good news is : Once you found a method to simplify the equation and make it solvable, the proof that you can find the Kerr metric using an Ansatz.
+As we start to see, solving the Einstein field equation for $H(r,z)$ with this metric, is not immediatly obvious how to integrate this.
+Thus it requires quite a bit of work to obtain an equation that we can solve more easily.
+The good news is : Once one found a method to simplify the equation and make it solvable, the proof that you can find the Kerr metric using a Kerr-Schild Ansatz becomes simple.
 Thus we will take some time to study this metric, its history and some useful identity. in the Kerr-Schild is short and easy.
 A good approach, the one that we are going to take, is to equate to zero a combination of parts of the Ricci tensor.
 Indeed if we choose the following combination equal to $0$ :
@@ -666,25 +666,25 @@ Indeed if we choose the following combination equal to $0$ :
 \end{equation}
 We obtain the following 1st order PDE :
 \begin{equation}\label{Kerr:equation}
-	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
+	(r^4+a^2z^2)(z \frac{\partial}{\partial z}H(r,z)+r\frac{\partial}{\partial r}H(r,z))+(r^4-a^2 z^2) H(r,z)=0
 \end{equation}
 We hence finally obtain an equation that is nice looking, and that we can solve.
 \subsection{Solving the equation}
-I can't say that we can solve the equation without solving it.
+As it is not enough to say that we can solve the equation, we will solve it in this subsection.
 So we will try to solve it.
 Let's have a look at it (\ref{Kerr:equation}) :
 \begin{equation}
-	(r^4+a^2z^2)(z H^{(0,1)}(r,z)+rH^{(1,0)}(r,z))+(r^4-a^2 z^2) H(r,z)=0
+	(r^4+a^2z^2)(z \frac{\partial}{\partial z}H(r,z)+r\frac{\partial}{\partial r}H(r,z))+(r^4-a^2 z^2) H(r,z)=0
 \end{equation}
 This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $(r^4-a^2 z^2)$ that may anoy us as they can't be eliminate and they contain a curious term $a^2z^2$.
 In order to get rid of this term we can try to define $P(r,z)$ such that $H(r,z)=P(r,z)(r^4+a^2z^2)^n(r^4-a^2 z^2)^m$ and then find convinient $n$ and $m$.
 Replacing $H(r,z)$ and simplifying, we obtain :
 \begin{align}
 \begin{split}
-	(r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
+	(r^4&-a^2 z^2)^{m-1} (a^2z^2+r^4)^n((r^8-a^4 z^4)(z \frac{\partial}{\partial z}H(r,z)+r \frac{\partial}{\partial r}H(r,z))\\
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1)))=0\\
    &\text{Dividing by }(r^4-a^2 z^2)^{m-1} (a^2z^2+r^4)^n,\\
-   &(r^8-a^4 z^4)(z H^{(0,1)}(r,z)+r H^{(1,0)}(r,z))\\
+   &(r^8-a^4 z^4)(z \frac{\partial}{\partial z}H(r,z)+r \frac{\partial}{\partial r}H(r,z))\\
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0
 \end{split}
 \end{align}
@@ -698,7 +698,7 @@ $C$ being a constant. Which gives us the following system :
 \end{equation}
 For which we find that $n=-1$, $m=0$ and our constant $C=-3$, therefore, now we deal with a function $H(r,z)$ of the form $H(r,z)=\frac{P(r,z)}{r^4+a^2z^2}$ and the following PDE :
 \begin{equation}\label{P:Eq}
-	z P^{(0,1)}(r,z)+r P^{(1,0)}(r,z)-3P(r,z)=0
+	z \frac{\partial}{\partial z}P(r,z)+r \frac{\partial}{\partial r}P(r,z)-3P(r,z)=0
 \end{equation}
 We can get rid of the $r$ and $z$ multiplying the function by definining $\hat{r}=\log{r}$ and $\hat{z}=\log{z}$ :
 \begin{equation}
