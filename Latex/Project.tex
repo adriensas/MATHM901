@@ -2,6 +2,7 @@
 	\usepackage{amsmath}
 	\usepackage{amsthm}
 	\usepackage{amssymb}
+	\usepackage{pdfpages}
 
 \newcommand\blankpage{%
     \null
@@ -25,7 +26,7 @@ Gower Street, London WC1E 6BT, United Kingdom
 \clearpage\maketitle
 \begin{abstract}
 	In General Relativity, deriving the Kerr Solution is a real challenge.
-	It is often avoided by many text books and the few methods that one can find are almost only accessible to experimented mathematician.
+	It is often avoided by many textbooks and the few methods that one can find are almost only accessible to experimented mathematician.
 	In this article, we will show how we can find a nice and easy derivation for this solution using a metric of the form : $g_{ij}=\eta_{ij}+2Hk_ik_j$.
 \end{abstract}
 \thispagestyle{empty}
@@ -42,40 +43,41 @@ Gower Street, London WC1E 6BT, United Kingdom
 
 % ------------------------INTRODUCTION------------------------
 \section{Introduction}
-Since Einstein formulated its field equations, the core work in general relativity is to find and study solution of these equations.
-Solutions of the Einstein field equations take the form of metrics, that describe effect of massive objects on spacetime.
-In this project we will focus on two of these solutions : the Schwarshild, and the Kerr solutions.
-\\The first on has been discovered by K. Schwarshild in 1916 few months after Einstein published his equation.
+Since Einstein formulated its field equations, the core work in general relativity has been to find and study solutions of these equations.
+Solutions of the Einstein field equations take the form of metrics, that describe the effect of massive objects on spacetime.
+In this project, we will focus on two of these solutions : the Schwarshild, and the Kerr solutions.
+\\The first one has been discovered by K. Schwarshild in 1916 few months after Einstein published his equations.
 It describes the space around a spherically symmetric static mass.
-The derivation of this solution is shown in almost every text books on general relativity for undergraduate students.
+The derivation of this solution is shown in almost every textbooks on general relativity for undergraduate students.
 \\The second solution that interests us is the Kerr Solution, discovered by R. P. Kerr in 1963.
-It correspond to the exact solution for an uncharged, rotating black$-$hole.
-As opposed to the Schwarshild case, the derivation of the Kerr solution is often avoided in text books.
-This lack of material may be explain by the fact that deriving this solution is a real challenge.
+It corresponds to the exact solution for an uncharged, rotating black$-$hole.
+As opposed to the Schwarshild case, the derivation of the Kerr solution is often avoided in textbooks.
+This lack of material may be explained by the fact that deriving this solution is a real challenge.
 \\Hence our ambition in this paper is to show that we can find an easier way to derive the Kerr solution.
-We want this method to be understandable by any undergraduate mathematics that has sufficient knowledge in general relativity or diffential geometry.
+We want this method to be understandable by any undergraduate student in mathematics that has sufficient knowledge in general relativity or differential geometry.
 In order to reach our goal, we are going to use a well known metric form, the Kerr-Schild type metrics, as an Ansatz.
-This form of metric is of great interest is of great interest to study the behaviour of certain metrics.
-We can indeed express the Schwarshild and Kerr solution under this form, so our hope is to be able to start with a general metric of this form to derive these.
-\\Consequently one of our first task will be to study this form of metric.
-Then we shall check that we can aplly this method of resolution to the Schwarshild spacetime.
-Finally we are going to use it to find the Kerr spacetime. But first of all we will briefly introduce the notion of differential geometry and general relativity that we will need.
+This form of metric is of great interest to study the behaviour of certain solutions.
+It is already well known that we can express the Schwarshild and Kerr solution under this form, so our hope is to be able to start with this metric to derive those solutions.
+\\Consequently one of our first task will be to study this type of metric.
+Then we shall check that we can apply this method of resolution to the Schwarshild spacetime.
+Finally, we are going to use it to find the Kerr spacetime.
+But first of all, we will briefly introduce the notion of differential geometry and general relativity that we will need.
 
 
 
 % ------------------------GEOMETRY AND SPACE-TIME------------------------
 \section{Geometry and space-time}
-This project focus on general relativity and requires some knowledge on the subject.
+This project focuses on general relativity and requires some knowledge on the subject.
 General Relativity is about representing gravity using differential geometry.
 Thus it seems normal to start it with a short introduction to geometry and space-time.
-General relativity uses a special branch of diffential geometry called Riemannian geometry, named after Bernhard Riemann.
-This section is inspired by C.G. B\"ohmer's book "Introduction to General Relavity and Cosmology" [Bibli].
-In order to get examples or more details of anything introduced here, one should refer to this book.
+General relativity uses a special branch of differential geometry called Riemannian geometry, named after Bernhard Riemann.
+We should note that this section is inspired by C.G. B\"ohmer's book "Introduction to General Relativity and Cosmology" \cite{BoehmerBook}.
+In order to get examples or more details on anything introduced here, one should refer to this book.
 The first thing that we should define is spacetime.
 \subsection{Manifold and metric}
 The mathematical object that we will use to describe spacetime is a manifold.
 A manifold is a topological space that locally resembles Euclidian space near each point.
-More formaly :
+More formally :
 \begin{definition}
 	\textbf{Manifold} :\\
 	An $n$-dimensional smooth manifold $\mathcal{M}$ is a set together with a collection of coordinates $\{ X^i_{(\alpha)}\}$
@@ -90,26 +92,26 @@ More formaly :
 		are related by a  transformation on the intersection $U_\alpha \cap U_\beta$.
 	\end{enumerate}
 \end{definition}
-Now we have define a space on which we can define scalars vector and tensor.
-In order to study this space we need to have a methods to measure the angle between two curves and the distance between two points.
-The object that will allow us to do that is the metric, wrote $g_{ij}$, which is a rank-2 symmetric tensor.
-We can understand the origin of the metric by starting by measuring small distance in the Euclidian space using Pythagoras' theorem :
+Now we have defined a space, on which we can construct scalars, vectors and tensors.
+In order to study this space we need to find a way to measure the angle between two curves and the distance between two points.
+The object that will allow us to do that is the metric, written $g_{ij}$, which is a rank-2 symmetric tensor.
+We can understand the origin of the concept of metric by starting by measuring a small distance in the Euclidian space using Pythagoras' theorem :
 \begin{equation}
 	\Delta s^2= \Delta x^2 + \Delta y^2 + \Delta z^2
 \end{equation}
-Hence in infinitesimal :
+Similarly in infinitesimal :
 \begin{equation}\label{dist}
 	ds^2= dx^2 + dy^2 + dz^2
 \end{equation}
-We see that this distance is independant of the position and this is not surprising as flat space is similar everywhere.
-But if we want to study curved space we obviously need to find a way to take into account the curvature in order to compute the distance between two points.\\
-We thus have to generalise (\ref{dist}).
+We see that this distance is independent of the position and this is not surprising as flat space is similar everywhere.
+But if we want to study curved space we obviously need to find a way to take into account that curvature in order to compute the distance between two points.\\
+We thus have to generalize (\ref{dist}).
 If we consider a coordinate set $X$ we can define a general infinitesimal distance on any smooth space by multiplying each combination of $dX^idX^j$ by some arbitrary function.
-This can be wrote as follow :
+This can be written as follow :
 \begin{equation}
 	ds^2=g_{ij}dX^idX^j
 \end{equation}
-The set of arbitrary function $g_{ij}$ is what we call the metric and $ds^2$ is called the line element.
+The set of arbitrary functions $g_{ij}$ is what we call the metric and $ds^2$ is called the line element.
 The line element gives us a full description of our surface.\\
 A formal definition of the metric and line element can be written :
 \begin{definition}
@@ -127,23 +129,23 @@ A formal definition of the metric and line element can be written :
 	where the $X^i$ are the coordinates in a patch of $\mathcal{M}$.
 \end{definition}
 \subsection{Geodesics}
-To understand the concept of geodesic, we will first look at the 2D flat space case.
-Hence let us consider a manifold $\mathcal{M}$ and a curve $C$ given by $X^i=X^i(\tau)$
-In our 2D flat space, we have $X^i=\{x,y\}$. and a line element of the form $ds^2=dx^2+dy^2$.
+To understand the concept of geodesics, we will first look at the 2D flat space case.
+Hence let us consider a manifold $\mathcal{M}$ and a curve $C$ given by $X^i=X^i(\tau)$.
+In our 2D flat space, we have $X^i=\{x,y\}$ and a line element of the form $ds^2=dx^2+dy^2$.
 In this case the curve can be written as follow $(x,y)=(x(\tau),y(\tau))$.
-Let us eliminate $\tau$ by writing our curve in the form $y=y(x)$ giving $dy=y'(x)dx$ such that our line element becomes $ds^2=dx^2+y'(x)dx^2$.
+Let us eliminate $\tau$ by writing our curve in the form $y=y(x)$, giving $dy=y'(x)dx$ such that our line element becomes $ds^2=dx^2+y'(x)dx^2$.
 And hence :
 \begin{equation}
 	s=\int ds=\int \sqrt{1+y'(x)^2}dx
 \end{equation}
-Now let us generalise to an arbitrary curve $C$ given by $X^i=X^i(\lambda)$ with an affine parametrization :
+Now let us generalize to an arbitrary curve $C$ given by $X^i=X^i(\lambda)$ with an affine parametrization :
 \begin{equation}
 	s=\int ds=\int \sqrt{g_{ij}\dot{X}^i\dot{X}^j}d\lambda
 \end{equation}
-This can be used to measure the distance between two point connected by a curve $C$.
-In general relativity we are interested in the curves that minimise the distance between two points.
+This can be used to measure the distance between two points connected by a curve $C$.
+In general relativity, we are interested in the curves that minimise the distance between two points.
 This focus is related to the Hamiltonian's principle or principle of least action.
-To find the shortest lines between to points, we can use the Lagrangian method and write :
+To find the shortest lines between two points, we can use the Lagrangian method and write :
 \begin{equation}
 	L(X^i,\dot{X}^j)=\sqrt{g_{ij}\dot{X}^i\dot{X}^j}
 \end{equation}
@@ -151,7 +153,7 @@ And the Euler-Lagrange are given by :
 \begin{equation}\label{Eul_Lag0}
 	\frac{\partial L}{\partial X^k}=\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}
 \end{equation}
-Let us begin with the left-hand side of the (\ref{Eul_Lag0}), and replace :
+Let us begin with the left-hand side of (\ref{Eul_Lag0}), and replace :
 \begin{equation}
 	\frac{\partial L}{\partial X^k}=\frac{1}{2L}\frac{\partial g_{ij}}{\partial X^k}\dot{X}^i\dot{X}^j
 \end{equation}
@@ -159,7 +161,7 @@ Now studying the right-hand side :
 \begin{equation}
 	\frac{\partial L}{\partial \dot{X}^k}=\frac{1}{2L}g_{ki}\dot{X}^i
 \end{equation}
-Before continuing, we remember that we took an affine parametrization $\lambda$, hence $L=1$ :
+Before continuing, we remember that we considered an affine parametrization $\lambda$, hence $L=1$ :
 \begin{equation}
 	\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X}^k}=
 	\frac{\partial g_{ki}}{\partial X^m}\dot{X}^m\dot{X}^i+g_{ki}\ddot{X}^i
@@ -173,12 +175,12 @@ And we can rewrite the equation as :
 \begin{equation}\label{Eul_Lag}
 	g_{ki}\ddot{X}^i+\frac{1}{2}(\partial_m g_{ki}\dot{X}^m\dot{X}^i+\partial_m g_{ki}\dot{X}^m\dot{X}^i-\partial_k g_{ij}\dot{X}^i\dot{X}^j)=0
 \end{equation}
-It may seems that this modification complicates the expression but we would like to introduce an important element of general relativity : the Christoffel symbol.
+It may seem that this modification complicates the expression but we would like to introduce an important element of general relativity : the Christoffel symbols.
 The Christoffel symbols are defined as follow :
 \begin{equation}\label{Chris}
 	\Gamma^n_{ij}=\frac{1}{2}g^{nk}(\partial_i g_{jk}+\partial_j g_{ki}-\partial_k g_{ij})
 \end{equation}
-By multiplying (\ref{Eul_Lag}) by $g^{nk}$ we can insert the Christoffel symbols in our equation :
+By multiplying (\ref{Eul_Lag}) by $g^{nk}$ we can insert the Christoffel symbols in our equations :
 \begin{equation}
 	\ddot{X}^n+\Gamma^n_{ij}\dot{X}^i\dot{X}^j=0
 \end{equation}
@@ -192,7 +194,7 @@ Hence we can define geodesics :
 	where $\Gamma^n_{ij}$ are given by (\ref{Chris}).
 \end{definition}
 \subsection{Curvature}
-Now let us talk about curvature. In general relativity curvature is described by the Riemann tensor.
+Now let us talk about curvature. In general relativity, curvature is described by the Riemann tensor.
 But before looking at the Riemann tensor, we need to introduce the notion of covariant derivative :
 \begin{definition}
 	\textbf{Covariant derivative :}\\
@@ -217,12 +219,12 @@ But before looking at the Riemann tensor, we need to introduce the notion of cov
 		\end{equation}
 	\end{itemize}
 \end{definition}
-Using this definition, let's try to write an explicit formula for covariant derivative.
-Not going into too much details, as we want the covariant derivative to act as a partial derivative on a scalar and make the covariant derivative of a tensor to differ by some quantity of its partial derivative, that does not transform like a tensor under coordinate transformation :
+Using this definition, let us try to write an explicit formula for covariant derivatives.
+Not going into too much details, as we want the covariant derivative to act as a partial derivative on a scalar and make the covariant derivative of a tensor to differ by some quantity of its partial derivative that does not transform like a tensor under coordinate transformation :
 \begin{equation}
 	\nabla_iA^n=\partial_iA^n+\Gamma^n_{ij}A^j
 \end{equation}
-Which is indeed the formula for covariant derivative.
+Which is indeed the formula for covariant derivatives.
 We also have :
 \begin{equation}
 	\nabla_iB_n=\partial_iB_n-\Gamma^j_{in}B_j
@@ -236,7 +238,7 @@ In order to understand the Riemann tensor, let us compute $\nabla _a \nabla _d V
 	-\Gamma^i_{ad}\Gamma^b_{ij}V^j+\Gamma^b_{aj}\partial_d V^j-\Gamma^b_{aj}\Gamma^j_{di}V^i
 \end{split}
 \end{align}
-And substract $\nabla _d \nabla _a V^b$ from this so that we get the commutator of two covariant derivatives and we obtain :
+And by substracting $\nabla _d \nabla _a V^b$ from this quantity we get the commutator of two covariant derivatives and we obtain :
 \begin{equation}
 	(\nabla _a \nabla _d - \nabla _d \nabla _a)V^b=(\partial_a \Gamma^b_{di}-\partial_d \Gamma^b_{ai}+\Gamma^b_{dj}\Gamma^j_{ai}-\Gamma^b_{aj}\Gamma^j_{di})V^i
 \end{equation}
@@ -261,15 +263,15 @@ As it is a rank 4 tensor we can have a look at the traces of the Riemann tensor 
 	\begin{equation}\label{Ricc}
 		R_{ab}=R_{acb}^c
 	\end{equation}
-	In dimension n this tensor has $n(n+1)/2$ independant components.\\
+	In dimension n this tensor has $n(n+1)/2$ independent components.\\
 	The Ricci scalar or scalar curvature is defined by :
 	\begin{equation}
 		R=R_c^c
 	\end{equation}
 \end{definition}
-We can relate the Riemann curvature to the relative acceleration of two neighboring geodesics using the geodesic deviation equation.
+We can relate the Riemann curvature to the relative acceleration of two neighbouring geodesics using the geodesic deviation equation.
 This equation will be of great use to us when we will try to build a bridge between classical physic and general relativity.
-We obtain this equation by first setting up a surface $X^a(\lambda,s)$, where $\lambda$ an affine parametrisation.
+We obtain this equation by first setting up a surface $X^a(\lambda,s)$, where $\lambda$ is an affine parametrisation.
 The tangent vector of this surface is :
 \begin{equation}
 	T^a=\frac{dX^a(\lambda,s)}{d\lambda}
@@ -279,19 +281,19 @@ We can also define what we call the deviation vector, which corresponds to the v
 	N^a=\frac{dX^a(\lambda,s)}{ds}
 \end{equation}
 We call the relative acceleration the second derivative of the deviation vector.
-We can find it by he directional covariant derivative of $N^a$ along $T$ twice :
+We can find it by using the directional covariant derivative of $N^a$ along $T$ twice :
 \begin{equation}
-	T^\alpha\nabla_\alpha(T^\beta\nabla_\beta N^a)=R^a_{ijk}T^iT^jX^k
+	T^\alpha\nabla_\alpha(T^\beta\nabla_\beta N^a)=-R^a_{ijk}T^iT^jN^k
 \end{equation}
 And writing $T^\alpha\nabla_\alpha$ as $\frac{D}{D\lambda}$ :
 \begin{equation}\label{Dev_Equ}
-	\frac{D^2N^a}{D\lambda^2}=R^a_{ijk}T^iT^jX^k
+	\frac{D^2N^a}{D\lambda^2}=-R^a_{ijk}T^iT^jN^k
 \end{equation}
-This is the  geodesic deviation equation.
+This is the geodesic deviation equation.
 We now have all the mathematical tools needed to introduce the Einstein field equations.
 \subsection{Einstein field equations}
 The Einstein field equations are the heart of our work in this paper.
-In this subsection we will try to succintly explain the origin of these equations.
+In this subsection, we will try to succinctly explain the origin of these equations.
 But first, let us define the Einstein tensor : 
 \begin{definition}
 	\textbf{Einstein tensor} :\\
@@ -299,7 +301,7 @@ But first, let us define the Einstein tensor :
 	\begin{equation}
 		G_{ab}=R_{ab}-\frac{1}{2}Rg_{ab}
 	\end{equation}
-	It is a symmetric rank-2 tensor. In n dimensions this tensor has $n(n+1)/2$ independant components, so in 4 dimensions it has 10 independant components.
+	It is a symmetric rank-2 tensor. In n dimensions this tensor has $n(n+1)/2$ independent components, so in 4 dimensions it has 10 independent components.
 \end{definition}
 We will also need to introduce the stress$-$energy$-$momentum tensor.
 It is a tensor quantity that describes the density and flux of energy and momentum in spacetime.
@@ -310,7 +312,7 @@ And it has the following properties :
 	&T^{ij}=T^{ji}\\
 	&\nabla_j T^{ij}=0\label{conserv}
 \end{align}
-The first equation describe the symmetry of the object $T^{ij}$ while the second one has a physical meaning : it is an energy and momentum conservation equation.\\
+The first equation describes the symmetry of the object $T^{ij}$ while the second one has a physical meaning : it is an energy and momentum conservation equation.\\
 Let us have a look at the Newton 2nd law :
 \begin{equation}
 	\frac{d^2\boldsymbol{x}}{dt^2}=\boldsymbol{g}
@@ -319,29 +321,29 @@ And compare it to the geodesics equation (\ref{Geodesic}) :
 \begin{equation}
 	\frac{d^2x^n}{d\lambda^2}=-\Gamma^n_{ij}\frac{dx^i}{d\lambda}\frac{dx^j}{d\lambda}
 \end{equation}
-As we want to describe gravity using diffential geometry, we should be able to identify the Christoffel symbols in the geodesic equation with the force per unit mass in Newton 2nd law.
+As we want to describe gravity using differential geometry, we should be able to identify the Christoffel symbols in the geodesic equation with the force per unit mass in Newton 2nd law.
 Looking at the physical unit, $\lambda$ is dimensionless, $[\boldsymbol{g}]=m/s^2$ and we deduce that $[\Gamma]=1/m$.
 Hence we have :
 \begin{equation}
 	\frac{\boldsymbol{g}}{\Gamma}=(\frac{m}{s})^2
 \end{equation}
-Which correspond to speed squared.
+Which corresponds to speed squared.
 If we want to find an equivalence between $\Gamma$ and $\boldsymbol{g}$ we then need to bring a physical constant in unit of speed squared.
-We immediatly think about the speed of light and thus we identify :
+We immediately think about the speed of light and thus we identify :
 \begin{equation}
 	\frac{1}{c^2} \boldsymbol{g} \longleftrightarrow \Gamma^n_{ij}
 \end{equation}
 The Christoffel symbols components depend on the first derivative of the metric $\partial_kg_{ij}$ multiply by a factor of $\frac{1}{2}$.
-And in Newtonian gravity $\boldsymbol{g}=-\text{grad}\phi_N$, which means that the field depends on the derivatives of the gravitationnal potential.
+And in Newtonian gravity $\boldsymbol{g}=-\text{grad}\phi_N$, which means that the field depends on the derivatives of the gravitational potential.
 We thus find that :
 \begin{equation}
 	\frac{1}{c^2}\phi_N \longleftrightarrow \frac{1}{2}g_{ij}
 \end{equation}
-In Newtonian gravity, for a spherically symmetric and static gravitationnal field we have :
+In Newtonian gravity, for a spherically symmetric and static gravitational field we have :
 \begin{equation}
 	\phi_N=\frac{-GM}{r}
 \end{equation}
-Therefore we may have :
+Therefore we may think :
 \begin{equation}
 	\frac{2GM}{c^2r} \longleftrightarrow g_{ij}
 \end{equation}
@@ -359,7 +361,7 @@ Let us find a similar equation in Newtonian mechanic.
 We begin with an Euclidian space $X^\alpha={x,y,z}$ and a family of curves $X^\alpha(t,s)$ where $t$ is the time along the curve and $s$ the curves.
 $T^\alpha=dX^\alpha/dt$ is the tangent vector to any of these curve for a fixed $s_0$.
 $N^\alpha=dX^\alpha/ds$ is the vector connecting infinitesimal close curves at fixed time.
-$\frac{\partial}{\partial t}N^\alpha$ can be interpret as the relative velocity between nearby curves, such that :
+$\frac{\partial}{\partial t}N^\alpha$ can be interpreted as the relative velocity between nearby curves, such that :
 \begin{equation}
 	\frac{\partial}{\partial t}N^\alpha=\frac{\partial}{\partial s}V^\alpha
 \end{equation}
@@ -389,12 +391,12 @@ But $R_{jic}^iT^jT^c=R_{jc}T^jT^c$, thus :
 \end{equation}
 As the Riemann tensor contains the second derivative of the metric tensor it is consistent with our previous identifications.
 We note that in the absence of gravity field we have $R_{jc}T^jT^c=0$ or $R_{jc}=0$ which is coherent with the Einstein vacuum field equation as we will see in a bit.\\
-To find the general Einstein equation we recall (\ref{conserv}) ($\nabla_j T^{ij}=0$) and look at the Poisson's equation for the gravitationnal field :
+To find the general Einstein equation we recall (\ref{conserv}) ($\nabla_j T^{ij}=0$) and look at the Poisson's equation for the gravitational field :
 \begin{equation}
 	\Delta\phi_N=4\pi G\rho
 \end{equation}
 It would thus make sense that it will appear on the left-hand side of the Einstein field equations.
-We can also deduce that we need more than the Ricci tensor on the right hand side as $\nabla_j R^{ij}\ne0$.
+We can also deduce that we need more than the Ricci tensor on the right$-$hand side as $\nabla_j R^{ij}\ne0$.
 However, it can be shown that $\nabla_j G^{ij}=0$.
 Hence we can write the Einstein field equations :
 \begin{equation}\label{ExEinst}
@@ -404,11 +406,11 @@ Or equivalently :
 \begin{equation}
 	G_{ij}=\kappa T_{ij}
 \end{equation}
-And in vacuum we have $T_{ij}=0$ so that the Einstein vacuum field equations are :
+And in vacuum we have $T_{ij}=0$ so the Einstein vacuum field equations are :
 \begin{equation}
 	G_{ij}=0
 \end{equation}
-We can obtain an alternative form of the Einstein field equations multiplying both sides of (\ref{ExEinst}) by $g^{ij}$, we get that $-R=\kappa T$.
+We can obtain an alternative form for the Einstein field equations by multiplying both sides of (\ref{ExEinst}) by $g^{ij}$, we get that $-R=\kappa T$.
 Replacing R in (\ref{ExEinst}) :
 \begin{equation}
 	R_{ij}=\kappa(T_{ij}-\frac{1}{2}Rg_{ij})
@@ -421,25 +423,25 @@ Such that in vacuum :
 We can now start the next step of our work by studying the metric that will be the heart of our study.
 
 % ------------------------KERR-SCHILD TYPE METRIC IN GR------------------------
-\section{Kerr-Schild type metric in GR}
-As the two next section will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Schild Ansatz,
+\section{Kerr-Schild type metric in General Relativity}
+As the two next sections will consist of deriving both the Schwarzschild and Kerr metric using the Kerr-Schild Ansatz,
 we will take some time to study this metric, its history and some useful identities.
 \subsection{What is it used for}
 The Kerr-Schild metric is a metric taking the form $g_{ij}=\eta_{ij}+2Hk_ik_j$.
 Where $H$ is an arbitrary function, $\eta_{ij}$ represent the Minkowski space, and $k$ a null vector.
-This form is interesting as it represent a modification of the Minkowski space and thus proving that you can write a metric under this form means that it is a linear superposition of the flat spacetime metric and a squared null vector field.
-It was used by R. P. Kerr and A. Schild, in "A new class of vacuum solutions of the Einstein field equations", in order to study certain vacuum solution of the Einstein field equations.
-It is often use to study spherically symmetric mass, axially symmetric rotating mass, charged mass, or even to study radiating object as done in [Paper Boehmer/Hogan].
+This form is interesting as it represents a modification of the Minkowski space and thus proving that you can write a metric under this form means that it is a linear superposition of the flat spacetime metric and a squared null vector field.
+It was used by R. P. Kerr and A. Schild, in "A new class of vacuum solutions of the Einstein field equations" \cite{KerrSchild}, in order to study certain vacuum solutions of the Einstein field equations.
+It is often used to study spherically symmetric mass, axially symmetric rotating mass, charged mass, or even to study radiating object as done in \cite{BohmerHogan}.
 
 \subsection{Some nice identity and properties}
-As we will work with Kerr-Schild type metric, we will be interested in deriving some identities and poperties of this metric.
+As we will work with Kerr-Schild type metrics, we will be interested in deriving some identities and poperties of this metric.
 First let us write it again :
 \begin{equation}
 	g_{ij}=\eta_{ij}+2Hk_ik_j
 \end{equation}
-with $k^i$ null with regard to $g^{ij}$ and the Minkowski metric $\eta_{ij}$.
+with $k^i$ null with regard to $g_{ij}$ and the Minkowski metric $\eta_{ij}$.
 And $H$ is an arbitrary function.
-For null geodesics, by definition, we have :
+For null vectors, by definition, we have :
 \begin{equation}
 	g^{ij}k_ik_j=0
 \end{equation}
@@ -447,7 +449,7 @@ and since $k^i$ is also null with regard to $\eta_{ij}$ :
 \begin{equation}
 	\eta^{ij}k_ik_j=0
 \end{equation}
-Such that we thus we deduce the following :
+Such that we deduce the following :
 \begin{align}
 	g^{ij}k_ik_j=\eta^{ij}k_ik_j \label{I:kequi}\\
 	g^{ij}k_i=\eta^{ij}k_i=k^j \label{I:kupper}
@@ -477,11 +479,11 @@ Or :
 We now have a nice formula for $g^{ij}$ that we will implicitly use in the next parts.
 From now on let us consider that $k_i$ is geodesic.
 This will be useful to our work as it will be indeed true for the cases that we will consider.
-This means that we immediatly obtain the following identity :
+This means that we immediately obtain the following identity :
 \begin{equation}
 	k^j\nabla_jk^i=k^jk^i_{,j}=0
 \end{equation}
-From this identity we are able to find a nice expression for the Christoffel symbols, the Riemann tensor and the Einstein tensor.
+From this identity, we are able to find a nice expression for the Christoffel symbols, the Riemann tensor and the Einstein tensor.
 We shall begin with the Christoffel symbols.
 Recall (\ref{Chris}):
 \begin{equation}
@@ -515,15 +517,15 @@ And then :
 	&=\partial_i (Hk_jk^n)+\partial_j (Hk^nk_i)-\partial_k (H\eta^{nk}k_ik_j)
 \end{split}
 \end{align}
-We will now come back to the Christoffel symbols, but first, let us write $\mathcal{H}_{ij}=Hk_ik_j$ such that we can write :
+We now have a nice formula for the Christoffel symbols, but first, let us write $\mathcal{H}_{ij}=Hk_ik_j$ such that we can write :
 \begin{equation}
 	\Gamma^n_{ij}=\mathcal{H}^n_{j,i}+\mathcal{H}^n_{i,j}-\eta^{nk}\mathcal{H}_{ij,k}+2\mathcal{H}^{nk}H_{,k}k_ik_j
 \end{equation}
-Now let us have a look at the Ricci tensor. From (\ref{Riemm}) and (\ref{Ricc}) :
+Then let us have a look at the Ricci tensor. From (\ref{Riemm}) and (\ref{Ricc}) :
 \begin{equation}
 	R_{ab}=R^c_{acb}=\partial_c\Gamma^c_{ab}-\partial_a\Gamma^c_{cb}+\Gamma^c_{c\lambda}\Gamma^\lambda_{ab}-\Gamma^c_{a\lambda}\Gamma^\lambda_{cb}
 \end{equation}
-First we will prove that in the expression of $R_{ab}$, $\Gamma^c_{cb}=0$ :
+First we will prove that the summation $\Gamma^c_{cb}=0$ :
 \begin{equation}
 \begin{split}
 	\Gamma^c_{cb}&=\mathcal{H}^c_{b,c}+\mathcal{H}^c_{c,b}-\eta^{ck}\mathcal{H}_{cb,k}+2\mathcal{H}^{ck}H_{,k}k_ck_b\\
@@ -580,10 +582,10 @@ In this section we will be interested in trying to derive Schwarzschild differen
 	g_{ij}=\eta_{ij}+2H(r)k_ik_j
 \end{equation}
 The Schwarzschild solution is a really important solution in general relativity.
-It was discovered a little more than a month after Einstein had formulated General Relativity and it describes the gravitationnal field outside a static spherical mass.
+It was discovered less than a year after Einstein had formulated General Relativity and it describes the gravitational field outside a static spherical mass.
 This solution can be used as an approximation for slowly rotating spherical astronomical object, like the Earth.
 \subsection{Standard way of finding the Schwarzschild solution}
-The standard way of finding the Schwarzschild metric usually start by writing the most general form of symmetric metric in vacuum :
+The standard way of finding the Schwarzschild metric start by writing the most general form of symmetric metric in vacuum :
 \begin{equation}
 	ds^2=-e^{A(r)}dt^2+e^{B(r)}dr^2+r^2d\Omega^2
 \end{equation}
@@ -608,18 +610,18 @@ Finally :
 \begin{equation}
 	ds^2=-(1-\frac{2m}{r})dt^2+(1-\frac{2m}{r})^{-1}dr^2+r^2d\Omega^2
 \end{equation}
-This method of finding the Schwarzschild solution works perfectly but still it is always interesting to find an alternative way to find it.
+This method of finding the Schwarzschild solution works perfectly but still, it is always interesting to find an alternative way to find it.
 It would also give us a better understanding of this metric as it will allow us to see the contribution of the Minkowski space in the Schwarzschild case.
 \subsection{Elements of the Kerr-Schild for the Schwarzschild case}
 We now want to focus on a metric of the following form $g_{ij}=\eta_{ij}+2H(r)k_ik_j$.
-First in the Schwarzschild case we consider a spherical object so we consider some $r$ such that $r^2=x^2+y^2+z^2$.
-$\eta_{ij}$ is known as the Minkowski metric defines as $\eta_{ij}=\text{diag}(-1,+1,+1,+1)$
+First in the Schwarzschild case we consider a spherical object so we choose some $r$ such that $r^2=x^2+y^2+z^2$.
+$\eta_{ij}$ is known as the Minkowski metric defined as $\eta_{ij}=\text{diag}(-1,+1,+1,+1)$.
 As for the $H$ we guess that it would only depend on $r$.
 We define $k_i=(-1,\frac{x}{r},\frac{y}{r},\frac{z}{r})$, a null vector.
 We notice that $k_ik^i=0 \Leftrightarrow r^2=x^2+y^2+z^2$.
 As $k^jk^i_{,j}=0$, it is also geodesic, and the identities derived earlier hold.
-We notice that the spatial part of $k_i$ is a radial components but is the metric symmetric?
-We can try to have a better overlook at the symmetry of the metric by looking at $k_ik_j$ in its matrice form :
+We notice that the spatial part of $k_i$ is a radial component but is the metric symmetric?
+We can try to have a better overview at the symmetry of the metric by looking of $k_ik_j$ in its matrice form :
 \begin{equation}
 	k_ik_j=\left(
 	\begin{array}{cccc}
@@ -634,15 +636,15 @@ We can try to have a better overlook at the symmetry of the metric by looking at
 	\right)
 \end{equation}
 The symmetry is not obvious at this point but we hope to arrive at a form of the metric where we will see it more clearly.
-\subsection{Einstein vacuum field equation}
+\subsection{Einstein vacuum field equations}
 From the formula we derived for $G_{ij}$ for metric of this form it is fairly simple to obtain the Einstein tensor.
-Looking at $G_{i0}, i=1,2,3$ we get :
+Looking at $G_{10}$ we get :
 \begin{equation}
-	G_{i0}=-\frac{8 H(r) (r^2 H'(r)+rH(r))}{(r^2)^{3/2}}
+	G_{i0}=-\frac{4x H(r) (r^2 H'(r)+rH(r))}{r^4}
 \end{equation}
-Our goal is to find $H(r)$ that solves the Einstein vacuum field equation $G_{ij}=0$ which in our case is $G_{i0}=0, i=1,2,3$ or :
+Our goal is to find $H(r)$ that solves the Einstein vacuum field equation $G_{ij}=0$ which in our case is $G_{10}=0$ or :
 \begin{equation}
-	-\frac{8 H(r) (r^2 H'(r)+rH(r))}{(r^2)^{3/2}}=0
+	-\frac{4x H(r) (r^2 H'(r)+rH(r))}{r^4}=0
 \end{equation}
 Which in general is equivalent to :
 \begin{equation}
@@ -665,16 +667,17 @@ Which is a solution of every Eistein vacuum field equation. Giving us :
 \begin{equation}
 	g_{ij}=\eta_{ij}+\frac{2C}{r}k_ik_j
 \end{equation}
-This is the Schwarzschild solution. As it is not so obvious in this form, in the next sub-section, we will put in back in the "classical form".
+This is the Schwarzschild solution.
+As it is not so obvious in this form, in the next sub-section, we will put it back in the "classical form".
 \subsection{Back to the standard form of the Schwarzschild solution}
-In order to be able to find the classical form of the Schwarzschild we should first write the line element of the metric we found explicitly :
+In order to be able to find back the classical form of the Schwarzschild we should first write the line element of the metric we found explicitly :
 \begin{equation}
 	ds^2=g_{ij}dX^idX^j
 \end{equation}
 \begin{equation}
 	ds^2=-dt^2+dx^2+dy^2+dz^2+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
 \end{equation}
-Then we will change the coordinates of this line element to sphericals, $X=\{t,r,\theta,\phi\}$ defined as :
+Then we will change the coordinates of this line element to spherical coordinates, $X=\{t,r,\theta,\phi\}$ defined as :
 \begin{align}
 	&t=t\\
 	&r^2=x^2+y^2+z^2\\
@@ -682,7 +685,7 @@ Then we will change the coordinates of this line element to sphericals, $X=\{t,r
 	&y=r\sin{\theta}\sin{\phi}\\
 	&z=r\cos{\theta}\label{coord-transform-3}
 \end{align}
-As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and another element we can immediatly replace the Minkowski part of our metric with the Minkowski metric in spherical coordinates :
+As we have constructed $g_{ij}$ to be the sum of the Minkowski metric and another element we can immediately replace the Minkowski part of our metric with the Minkowski metric in spherical coordinates :
 \begin{equation} \label{line-elem-schwarz}
 	ds^2=-dt^2+dr^2+r^2d\Omega^2\;+\frac{2C}{r}(-dt+\frac{x}{r}dx+\frac{y}{r}dy+\frac{z}{r}dz)^2
 \end{equation} 
@@ -740,7 +743,7 @@ Actually, with an easy coordinate change, $dt\rightarrow dt+dr$, we can get the 
 	ds^2=-(1-\frac{2C}{r})dt^2+2dtdr+r^2d\Omega^2
 \end{equation}
 This form of the Schwarzschild metric is often used to study travelling light ray.
-Now in order to get the original Schwarzschild we will introduce a bit more difficult coordinate change, $dt\rightarrow dt+(2C/r-1)^{-1}dr$, from which we can immediatly obtain :
+Now in order to get the original Schwarzschild we will introduce a bit more difficult coordinate change, $dt\rightarrow dt+(2C/r-1)^{-1}dr$, from which we can immediately obtain :
 \begin{equation}
 	ds^2=\frac{1}{r(2C-r)}((4C^2-4rC+r^2)dt^2-r^2dr)+r^2d\Omega^2
 \end{equation}
@@ -753,7 +756,7 @@ We can always take $C=m$, obtaining the Schwarshild solution as we introduced it
 % ------------------------DERIVING KERR DIFFERENTLY------------------------
 \section{Deriving Kerr differently}
 Now we want to use the same method we used for the Schwarzschild solution to find the Kerr solution.
-The Kerr metric is another exact solution of the Einstein field equations found in 1963 by Roy P. Kerr.
+The Kerr metric is another exact solution of the Einstein field equations found in 1963 by Roy P. Kerr (as explained in \cite{Kerr}).
 It is a generalization of the Schwarzschild solution, it describes an axially-symmetric rotating object.
 This metric is often used to describe rotating black-holes.
 In its Kerr-Schild form, we can write it as :
@@ -762,11 +765,11 @@ In its Kerr-Schild form, we can write it as :
 \end{equation}
 with $k_i=(-1,\frac{r x + a y}{r^2 + a^2},\frac{ry-ax}{r^2+a^2},\frac{z}{r})$.
 The goal of this part, and of the project as a whole is to find an explicit way of deriving the Kerr solution.
-Indeed, to the best of my knowledge no text book shows a clear derivation of this solution.
-Generally the metric is stated explicitly first and then it is shown that it satisfies the vacuum field equation.
+Indeed, to the best of my knowledge, no textbook shows a clear derivation of this solution.
+Generally, the metric is stated explicitly first and then it is shown that it satisfies the vacuum field equation.
 \subsection{Standard way of finding the Kerr solution}
-Classicaly finding the Kerr metric is a complicated task.
-There don't exist many ressources on this subject, and the few ressources that are available are clearly not accessible to undergraduate students.
+Classically finding the Kerr metric is a complicated task.
+There don't exist many resources on this subject, and the few resources that are available are clearly not accessible to undergraduate students.
 They use complicated mathematical notion, and even a more experienced mathematician would require some time to understand the proof.
 Hence it would be interesting to find a simpler way to derive the Kerr solution.
 \subsection{Elements of the Kerr-Schild for the Kerr case}
@@ -785,13 +788,13 @@ And let $k$ be :
 \begin{equation}
 	k_i=(-1,\frac{r x + a y}{r^2 + a^2},\frac{ry-ax}{r^2+a^2},\frac{z}{r})
 \end{equation}
-Similarly we took $k_i$ to be a generalization of the Schwarzschild $k_i$ as when $a \rightarrow 0$ we get the Schwarzschild $k_i$.
+Similarly, we took $k_i$ to be a generalization of the Schwarzschild $k_i$ as when $a \rightarrow 0$ we get the Schwarzschild $k_i$.
 We notice that again, $k^ik_i=0$ and $k^jk^i_{,j}=0$, making $k_i$ null and geodesic.
-\subsection{Einstein vacuum field equation}
+\subsection{Einstein vacuum field equations}
 This time finding the Einstein tensor is a bit more challenging.
-The Schwarzschild case computed by hand is already a long calculation and adding a dregree a freedom in the Kerr case make it even harder.
-Using a computer programs like Mathematica, we can find the Einstein tensor components.
-The simplest element of the Einstein tensor after simplifying it as much as possible is $G_{00}$ :
+The Schwarzschild case computed by hand is already a long calculation and adding a degree of freedom in the Kerr case makes it even harder.
+Using computer programs like Mathematica, we can find the Einstein tensor components.
+The simplest of those components after simplifying it as much as possible is $G_{00}$ :
 \begin{align}
 \begin{split}
 	G_{00} = &\frac{1}{a^2 r^2z^2+r^6}(-2 a^2 r^3 z \frac{\partial^2}{\partial r\partial z}H(r,z)-a^2 r^2 z^2 \frac{\partial^2}{\partial z^2}H(r,z)\\&+a^2 r^2(z^2-r^2) \frac{\partial^2}{\partial r^2}H(r,z)
@@ -800,11 +803,11 @@ The simplest element of the Einstein tensor after simplifying it as much as poss
 	+r^6(-\frac{\partial^2}{\partial z^2}H(r,z))\\&+2 r^5 \frac{\partial}{\partial r}H(r,z)+r^4 z^2\frac{\partial^2}{\partial z^2}H(r,z)+4 r^4 z \frac{\partial}{\partial z}H(r,z)-4 r^4 H(r,z)^2)
 \end{split}
 \end{align}
-Even if it is the simplest Einstein tensor component, solving $G_{00}=0$ would be very difficult.
+Even if it is the simplest of the Einstein tensor components, solving $G_{00}=0$ would be very difficult.
 Indeed, this equation contains second order derivatives and product of the derivatives of the function we are looking for.
-We begin to see that that in the Kerr case, the quantity we are interested have long an complicated expression.
-This is why deriving the Kerr solution exactly is so difficult and often avoided in text books.
-Fortunatly, another form of the Einstein vacuum field equation states that $R_{ij}=0$.
+We begin to see that in the Kerr case, the quantity we are interested in, like the Einstein tensor, have long and complicated expression.
+This is why deriving the Kerr solution exactly is difficult and often avoided in textbooks.
+Fortunately, another form of the Einstein vacuum field equation states that $R_{ij}=0$.
 Thus we can do a little bit a better by looking at the Ricci tensor component $R_{00}$ :
 \begin{align}
 \begin{split}
@@ -813,13 +816,13 @@ Thus we can do a little bit a better by looking at the Ricci tensor component $R
 	\frac{\partial^2}{\partial r^2}H(r,z))+2 r^2 \frac{\partial}{\partial r}H(r,z))}{a^2 z^2+r^4}
 \end{split}
 \end{align}
-It is a little bit better but still not ideal.
+It looks a bit better but still is not ideal.
 We would rather find an equation for which the integration is more obvious.
 Hence, solving the Einstein field equation for $H(r,z)$ with this metric, seems to be a hard task,
 and it requires quite a bit of work to obtain an equation that we can solve more easily.
 The good news is : Once one found a method to simplify the equation and make it solvable, the proof that you can find the Kerr metric using a Kerr-Schild Ansatz becomes simple.
 A good approach, the one that we are going to take, is to solve the Einstein vacuum field equation for a combination of components of the Ricci tensor.
-Accordingly, if we choose the following combination equal to $0$ :
+Accordingly, if we choose the following combination to be equal to $0$ :
 \begin{equation}
 	(r^4+a^2z^2)^3(zR_{00}+rR_{03}+\frac{a^2+r^2}{rx+ay}(zR_{10}+rR_{13}))=0
 \end{equation}
@@ -827,14 +830,14 @@ We obtain the following 1st order PDE :
 \begin{equation}\label{Kerr:equation}
 	(r^4+a^2z^2)(z \frac{\partial}{\partial z}H(r,z)+r\frac{\partial}{\partial r}H(r,z))+(r^4-a^2 z^2) H(r,z)=0
 \end{equation}
-We hence finally obtain an equation that look nice, and that we can solve.
+We hence finally obtain an equation that looks nice, and that we can solve.
 \subsection{Solving the equation}
 Between saying that we can solve an equation and actually solving it there is a gap, and probity forces us to indeed solve it.
 Let us have a look at our equation (\ref{Kerr:equation}) :
 \begin{equation}
 	(r^4+a^2z^2)(z \frac{\partial}{\partial z}H(r,z)+r\frac{\partial}{\partial r}H(r,z))+(r^4-a^2 z^2) H(r,z)=0
 \end{equation}
-This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $(r^4-a^2 z^2)$ that may anoy us as they contain a curious term $a^2z^2$.
+This equation doesn't look that bad but we have some factor $(r^4+a^2z^2)$ and $(r^4-a^2 z^2)$ that may annoy us as they contain an odd term $a^2z^2$.
 In order to get rid of these factors we can try to define some $P(r,z)$ such that $H(r,z)=P(r,z)(r^4+a^2z^2)^n(r^4-a^2 z^2)^m$ and then find convenient $n$ and $m$.
 Replacing $H(r,z)$ and simplifying, we obtain :
 \begin{align}
@@ -846,7 +849,7 @@ Replacing $H(r,z)$ and simplifying, we obtain :
    &+H(r,z)(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=0
 \end{split}
 \end{align}
-The resulting equation is a quite nice as we can eliminate all the $a^2z^2$ terms by carefully choosing some $m$ and $n$ that solve :
+The resulting equation is quite nice as we can eliminate all the $a^2z^2$ terms by carefully choosing some $m$ and $n$ that solve :
 \begin{equation}
 	(a^4 z^4 (-2 m-2 n+1)+2 a^2 r^4 z^2 (m-n-1)+r^8(4 m+4 n+1))=C(r^8-a^4 z^4)
 \end{equation}
@@ -906,7 +909,7 @@ Which has the following solution :
 \begin{equation}
 	P(u,v)=e^{\frac{3}{2}u}C(v)
 \end{equation}
-We can write it back using our origin coordinates knowing :
+We can write it back using our original coordinates knowing :
 \begin{equation}
 \begin{split}
 	u&=\log{r} + \log{z}=\log{(rz)}\\
@@ -917,7 +920,7 @@ We then have :
 \begin{equation}
 	P(r,z)=(rz)^\frac{3}{2}C(\log{\frac{r}{z}})=r^3(\frac{z}{r})^\frac{3}{2}C(\log{\frac{r}{z}})
 \end{equation}
-So that we can define $\tilde C(\frac{r}{z})=(\frac{r}{z})^\frac{3}{2}C(\log{(\frac{z}{r})^{-1}})$ and write :
+Consequently we can define $\tilde C(\frac{r}{z})=(\frac{r}{z})^\frac{3}{2}C(\log{(\frac{z}{r})^{-1}})$ and write :
 \begin{equation}
 	P(r,z)=r^3\tilde C(\frac{z}{r})
 \end{equation}
@@ -966,12 +969,30 @@ Which is, as expected, the Kerr solution.
 % ------------------------CONCLUSION------------------------
 \section{Conclusion}
 In conclusion, we managed to use the Kerr-Schild type metric as an Ansatz to derive both Schwarzschild and Kerr spacetime.
-It took us a reasonnable amount of guessing, and we managed to get a proof quite simple and short, that should be understood by anyone who as some rudiments in general relativity.
-However it would be interesting to take a closer look at our choice for the tensors $k$.
-One may also have the curiosity to derive other Einstein field equation using this method.
+It took us a reasonable amount of guessing, and we managed to get a proof quite simple and short, that should be understood by anyone who has some rudiments in general relativity.
+However, it would be interesting to take a closer look at our choice for the tensors $k$.
+One may also have the curiosity to derive other Einstein solutions using this method.
 For instance, it is possible to introduce a time-varying mass, $m(t)$, to derive the Vaidya (radiating Schwarshild) case, and try to find some $H(r,t)$.
 Similarly one can introduce a time-varying mass, $m(t)$, and time-varying source of angular momentum, $a(t)$, to find the radiating Kerr solution.
-More generally it should be faisable to derive any of the Einstein field solutions that can be written under the Kerr-Schild fomr, using this Ansatz.
+More generally it should be doable to derive any of the Einstein field solutions that can be written under the Kerr-Schild form, using this Ansatz.
 
+\pagebreak
+\appendix
+\includepdf[scale=0.95,pages=1,pagecommand=\section{Appendix : Mathematica}\subsection{Schwarshild Case}, offset=0 -3cm]{SchwarzchildCase.pdf}
+\includepdf[scale=0.95,pages=1,pagecommand=\subsection{Kerr Case}, offset=0 -3cm]{KerrAppendix.pdf}
+\includepdf[scale=1,pages=2-,pagecommand=,offset=0 -2cm]{KerrAppendix.pdf}
 
+\begin{thebibliography}{9}
+	\bibitem{BoehmerBook} 
+	\emph{Introduction to general relativity and cosmology}, [1-78634-117-4], B\"ohmer
+
+	\bibitem{KerrSchild} 
+	\emph{A new class of vacuum solutions of the Einstein field equations}, General Relativity and Gravitation, 2009, Vol.41(10), pp.2485-2499 [Peer Reviewed Journal], Kerr, R. ; Schild, A.
+	
+	\bibitem{BohmerHogan} 
+	\emph{A Vaidya-type generalization of Kerr spacetime}, Modern physics letters A [0217-7323] Boehmer, Hogan
+	 
+	\bibitem{Kerr} 
+	\emph{Discovering the Kerr and Kerr-Schild metrics}, arXiv:0706.1109 [gr-qc], R.P. Kerr
+\end{thebibliography}
 \end{document}
